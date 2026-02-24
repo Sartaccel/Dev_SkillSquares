@@ -1,0 +1,122 @@
+/* SECTION */
+.career-section {
+  background: #f9f9f9;
+}
+
+/* SORT TEXT */
+.sort-text {
+  color: #777;
+}
+
+/* CARD */
+.job-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  transition: 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+}
+
+/* HEADER */
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.job-header img {
+  width: 100px;
+  height: 25px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.dots {
+  color: #999;
+  cursor: pointer;
+}
+
+/* TEXT */
+.job-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tags span {
+  background: rgba(255, 107, 0, 0.1);
+  color: #ff6b00;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* BUTTONS */
+.job-buttons {
+  margin-top: auto;
+}
+
+.apply-btn {
+  flex: 1;
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.apply-btn:hover {
+  background: #ff9900;
+}
+
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination-controls button {
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.pagination-controls button:disabled {
+  background: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: #ff9900;
+}
