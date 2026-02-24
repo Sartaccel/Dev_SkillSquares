@@ -1,0 +1,132 @@
+/* SECTION */
+.reviews-section {
+  background: linear-gradient(135deg, #fff8f0, #ffffff);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+/* HEADING */
+.review-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #3d3d3d;
+}
+
+.review-heading span {
+  color: #ff6b00;
+}
+
+.review-sub {
+  color: #6b6b6b;
+  font-size: 18px;
+}
+
+/* SCROLL CONTAINER */
+.review-container {
+  height: 40rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.review-container.reverse {
+  mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
+}
+
+/* Scroll wrapper */
+.scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.scroll-t2b {
+  animation: scrollTopToBottom 60s linear infinite;
+}
+
+.scroll-b2t {
+  animation: scrollBottomToTop 60s linear infinite;
+}
+
+.review-container:hover .scroll-wrapper {
+  animation-play-state: paused;
+}
+
+/* Animations */
+@keyframes scrollTopToBottom {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollBottomToTop {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* CARD */
+.review-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.4s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+}
+
+/* HEADER */
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.emoji {
+  font-size: 28px;
+  margin-right: 12px;
+}
+
+.name {
+  font-weight: 600;
+  color: #3d3d3d;
+  margin: 0;
+}
+
+.role {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+/* STARS */
+.stars {
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.review-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .review-container {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-heading {
+    font-size: 28px;
+  }
+}

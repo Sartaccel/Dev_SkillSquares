@@ -1,0 +1,196 @@
+/* SECTION HEADER */
+.section-header {
+  margin-bottom: 70px;
+}
+
+.section-header h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #3d3d3d;
+}
+
+.section-header h2 span {
+  color: #ff6b00;
+}
+
+.section-header p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #6b6b6b;
+}/* SECTION BACKGROUND */
+.success-section {
+  background: #e7ddd2;
+  padding: 100px 0;
+  position: relative;
+}
+
+/* CARD */
+.testimonial-card {
+  padding: 20px 30px;
+  position: relative;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* Slow floating animation */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* IMAGE WRAPPER */
+.image-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 25px;
+}
+
+/* Blob Background */
+.blob {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #eab9a1;
+  border-radius: 50% 60% 50% 70%;
+  animation: blobMove 8s infinite ease-in-out;
+}
+
+/* Blob animation */
+@keyframes blobMove {
+  0% { border-radius: 50% 60% 50% 70%; }
+  50% { border-radius: 60% 50% 70% 50%; }
+  100% { border-radius: 50% 60% 50% 70%; }
+}
+
+.image-wrapper img {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  object-fit: cover;
+}
+
+/* NAME */
+.testimonial-card h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #3d3d3d;
+}
+
+/* REVIEW TEXT */
+.testimonial-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Vertical Divider */
+.with-border {
+  border-right: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative small circles */
+.success-section::before,
+.success-section::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  animation: floatDot 5s infinite ease-in-out alternate;
+}
+
+.success-section::before {
+  top: 60px;
+  left: 10%;
+}
+
+.success-section::after {
+  top: 120px;
+  right: 15%;
+}
+
+@keyframes floatDot {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .with-border {
+    border-right: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+}
+/* Extra decorative circles */
+.success-section .container::before,
+.success-section .container::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  animation: floatDot 6s infinite ease-in-out alternate;
+}
+
+/* Left bottom circle */
+.success-section .container::before {
+  bottom: 80px;
+  left: 20%;
+}
+
+/* Right middle circle */
+.success-section .container::after {
+  top: 200px;
+  right: 8%;
+}
+.image-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 25px;
+}
+/* Big outline circle */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: -10px;
+  left: -20px;
+  animation: floatCircle 4s ease-in-out infinite alternate;
+}
+
+/* Small filled black dot */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  top: 10px;
+  right: -15px;
+  animation: floatCircle 3s ease-in-out infinite alternate;
+}
+
+/* Small peach soft dot */
+.image-wrapper .soft-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #eab9a1;
+  border-radius: 50%;
+  bottom: -8px;
+  left: 15px;
+  animation: floatCircle 5s ease-in-out infinite alternate;
+}
