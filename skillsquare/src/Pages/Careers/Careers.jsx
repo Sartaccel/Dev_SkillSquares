@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Careers.css";
-
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 /* Import local logos */
 import company1 from "../../assets/images/sart.jpg";
 import company2 from "../../assets/images/tt.png";
@@ -139,22 +139,28 @@ function Careers() {
 
         {/* Pagination Arrows */}
         <div className="pagination-controls mt-5">
-          <button
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage(currentPage - 1)}
-          >
-            ← Previous
-          </button>
 
-          <span>Page {currentPage} of {totalPages}</span>
+  <button
+    className="arrow-btn"
+    disabled={currentPage === 1}
+    onClick={() => setCurrentPage(currentPage - 1)}
+  >
+    <FaChevronLeft />
+  </button>
 
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage(currentPage + 1)}
-          >
-            Next →
-          </button>
-        </div>
+  <span className="page-text">
+    Page {currentPage} of {totalPages}
+  </span>
+
+  <button
+    className="arrow-btn"
+    disabled={currentPage === totalPages}
+    onClick={() => setCurrentPage(currentPage + 1)}
+  >
+    <FaChevronRight />
+  </button>
+
+</div>
 
       </div>
     </section>

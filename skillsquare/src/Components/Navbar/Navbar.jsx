@@ -121,6 +121,11 @@ const handleMouseLeave = () => {
     <div className="collapse navbar-collapse" id="navbarContent">
 
       <ul className="navbar-nav mx-auto">
+        <li className="nav-item" onMouseEnter={handleMouseLeave}>
+  <Link className="nav-link" to="/" onClick={closeNavbar}>
+     Home
+  </Link>
+</li>
 
         {/* ALL COURSES */}
        <li

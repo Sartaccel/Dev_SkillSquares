@@ -24,7 +24,7 @@ const testimonials = [
 
 function Success() {
   return (
-    <section className="success-section">
+    <section className="success-section" id="success">
       <div className="container">
          {/* Heading */}
     <div className="section-header text-center" data-aos="fade-up">
