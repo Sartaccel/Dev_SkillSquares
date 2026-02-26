@@ -81,7 +81,7 @@ function WhyChoose() {
   }, []);
 
   return (
-    <section className="why-section">
+    <section className="why-section" id="whychoose">
       {/* Background Squares */}
      <div className="squares">
   {[...Array(100)].map((_, i) => {
@@ -107,7 +107,7 @@ function WhyChoose() {
       <div className="container position-relative">
         <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="section-title">
-            Why Choose <span>Skill Squares</span>
+            Why Choose <span>SkillSquare</span>
           </h2>
           <p className="section-sub">
             Empowering careers through quality training and innovation.

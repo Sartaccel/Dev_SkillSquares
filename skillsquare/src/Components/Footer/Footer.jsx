@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="footer-column">
             <div className="footer-logo">
               <img src={logo} alt="Company Logo" />
-              <h3>Skill Square</h3>
+              <h3>SkillSquare</h3>
             </div>
             <p className="footer-description">
               We provide industry-level training in Web Development,
@@ -48,9 +48,9 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/">Courses</a></li>
-              <li><a href="/">About Us</a></li>
-              <li><a href="/">Contact</a></li>
+              <li><a href="/#courses">Courses</a></li>
+              <li><a href="/#whychoose">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -87,8 +87,12 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="footer-bottom">
-          © {new Date().getFullYear()} Enterkey Foundation | All Rights Reserved.
-        </div>
+  © {new Date().getFullYear()}{" "}
+  <a href="https://www.enterkeysolutions.com" target="_blank" className="footer-company">
+    Enterkey Solution
+  </a>{" "}
+  | All Rights Reserved.
+</div>
 
       </footer>
     </div>

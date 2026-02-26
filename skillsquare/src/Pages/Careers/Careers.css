@@ -1,31 +1,54 @@
-/* SECTION */
+/* ===============================
+   ROOT COLORS
+================================= */
+:root {
+  --primary: #1b9b8e;
+  --primary-dark: #15877c;
+  --primary-light: #e0f4f2;
+  --section-bg: #f4fdfc;
+  --text-dark: #3d3d3d;
+  --text-muted: #777;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-hover: rgba(27, 155, 142, 0.15);
+}
+
+/* ===============================
+   SECTION
+================================= */
 .career-section {
-  background: #f9f9f9;
+  background: var(--section-bg);
 }
 
-/* SORT TEXT */
+/* ===============================
+   SORT TEXT
+================================= */
 .sort-text {
-  color: #777;
+  color: var(--text-muted);
 }
 
-/* CARD */
+/* ===============================
+   CARD
+================================= */
 .job-card {
   background: #ffffff;
   padding: 25px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 107, 0, 0.15);
+  border: 1px solid rgba(27, 155, 142, 0.15);
   transition: 0.4s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 8px 25px var(--card-shadow);
 }
 
 .job-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+  box-shadow: 0 15px 40px var(--card-hover);
 }
 
-/* HEADER */
+/* ===============================
+   HEADER
+================================= */
 .job-header {
   display: flex;
   justify-content: space-between;
@@ -45,10 +68,13 @@
   cursor: pointer;
 }
 
-/* TEXT */
+/* ===============================
+   TEXT
+================================= */
 .job-card h5 {
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--text-dark);
 }
 
 .job-card p {
@@ -58,7 +84,9 @@
   flex-grow: 1;
 }
 
-/* TAGS */
+/* ===============================
+   TAGS
+================================= */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -67,22 +95,24 @@
 }
 
 .tags span {
-  background: rgba(255, 107, 0, 0.1);
-  color: #ff6b00;
+  background: rgba(27, 155, 142, 0.1);
+  color: var(--primary);
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
 }
 
-/* BUTTONS */
+/* ===============================
+   BUTTONS
+================================= */
 .job-buttons {
   margin-top: auto;
 }
 
 .apply-btn {
   flex: 1;
-  background: #ff6b00;
+  background: var(--primary);
   color: #fff;
   border: none;
   padding: 8px;
@@ -91,10 +121,13 @@
 }
 
 .apply-btn:hover {
-  background: #ff9900;
+  background: var(--primary-dark);
+  transform: scale(1.03);
 }
 
-
+/* ===============================
+   PAGINATION
+================================= */
 .pagination-controls {
   display: flex;
   justify-content: center;
@@ -103,7 +136,7 @@
 }
 
 .pagination-controls button {
-  background: #ff6b00;
+  background: var(--primary);
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -118,5 +151,42 @@
 }
 
 .pagination-controls button:hover:not(:disabled) {
-  background: #ff9900;
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+/* ===============================
+   PAGINATION ARROW BUTTON
+================================= */
+
+.arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(27, 155, 142, 0.25);
+}
+
+.arrow-btn:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.arrow-btn:disabled {
+  background: #ddd;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.page-text {
+  font-weight: 500;
+  color: var(--primary-dark);
 }

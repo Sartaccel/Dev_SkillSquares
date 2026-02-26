@@ -1,10 +1,22 @@
+/* ================= ROOT COLORS ================= */
+
+:root {
+  --primary: #1b9b8e;
+  --primary-hover: #15877c;
+  --primary-light: #e0f4f2;
+  --white: #ffffff;
+  --text-dark: #1f2933;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.08);
+}
+
 /* ================= NAVBAR BASE ================= */
 
 .custom-navbar {
-  position: relative;
-  background: #ffffff;
+  position: sticky;
+  background: var(--white);
   padding: 12px 0;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 30px var(--shadow-light);
   transition: all 0.4s ease;
   z-index: 999;
 }
@@ -12,7 +24,7 @@
 .navbar-brand {
   font-weight: 700;
   font-size: 22px;
-  color: #ff6b00 !important;
+  color: var(--primary) !important;
 }
 
 /* ================= NAV LINKS ================= */
@@ -23,10 +35,11 @@
   position: relative;
   cursor: pointer;
   transition: 0.3s ease;
+  color: var(--text-dark);
 }
 
 .nav-link:hover {
-  color: #ff6b00 !important;
+  color: var(--primary) !important;
 }
 
 .nav-link::after {
@@ -34,7 +47,7 @@
   position: absolute;
   width: 0%;
   height: 2px;
-  background: #ff6b00;
+  background: var(--primary);
   bottom: -3px;
   left: 0;
   transition: 0.3s ease;
@@ -46,12 +59,10 @@
 
 /* ================= MEGA MENU FIXED ================= */
 
-/* IMPORTANT: must be static */
 .mega-parent {
   position: static;
 }
 
-/* FULL WIDTH DROPDOWN AREA */
 .mega-menu {
   position: absolute;
   left: 0;
@@ -62,14 +73,13 @@
   z-index: 1000;
 }
 
-/* CENTERED CONTENT */
 .mega-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 20px;
   padding: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px var(--shadow-medium);
   animation: fadeIn 0.25s ease forwards;
 }
 
@@ -78,7 +88,7 @@
 .category-menu {
   max-height: 400px;
   overflow-y: auto;
-  border-right: 1px solid #eee;
+  border-right: 1px solid var(--primary-light);
   padding-right: 10px;
 }
 
@@ -90,25 +100,26 @@
   border-radius: 8px;
   transition: 0.3s ease;
   margin-bottom: 5px;
+  color: var(--text-dark);
 }
 
 .category-item:hover {
-  background: #ffe8d9;
+  background: var(--primary-light);
 }
 
 .category-item.active {
-  background: #ff6b00;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--white);
 }
 
 .cat-icon {
   margin-right: 10px;
   font-size: 18px;
-  color: #ff6b00;
+  color: var(--primary);
 }
 
 .category-item.active .cat-icon {
-  color: white;
+  color: var(--white);
 }
 
 .cat-text {
@@ -128,23 +139,23 @@
 }
 
 .course-card {
-  background: #ffffff;
+  background: var(--white);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px var(--shadow-light);
   transition: all 0.3s ease;
   height: 100%;
 }
 
 .course-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px var(--shadow-medium);
 }
 
 .course-icon {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #ff6b00;
+  color: var(--primary);
 }
 
 .course-card h6 {
@@ -154,20 +165,22 @@
 }
 
 /* ================= ENROLL BUTTON ================= */
-
 .enroll-btn {
-  background: linear-gradient(45deg, #ff6b00, #ff9900);
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #1b9b8e, #26c6b8);
+  color: #fff !important;
   border-radius: 30px;
   padding: 8px 22px;
   font-weight: 500;
-  transition: 0.3s ease;
-  border: none;
+  border: 4px solid var(--primary-light);
+  transition: all 0.3s ease;
 }
 
 .enroll-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(255, 107, 0, 0.4);
+  color: var(--primary-hover)!important;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-light));
+  border: 4px solid var(--primary-hover);
+
+  transform: scale(1.05);
 }
 
 /* ================= ANIMATION ================= */
@@ -189,7 +202,7 @@
   .mega-menu {
     position: static;
     padding: 15px;
-    background-color: #ff9900;
+    background-color: var(--primary-light);
     border-radius: 20px;
   }
 
@@ -207,7 +220,8 @@
   .courses-grid {
     padding-left: 0;
   }
-    .navbar-nav {
+
+  .navbar-nav {
     text-align: center;
     width: 100%;
   }
@@ -226,21 +240,19 @@
     text-align: center;
     margin-top: 15px;
   }
+
   .nav-link::after {
     display: none;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .nav-link {
     margin: 8px 0;
-
   }
 
   .category-item {
-    background: #f2f2f2;
+    background: var(--primary-light);
   }
 
   .enroll-btn {

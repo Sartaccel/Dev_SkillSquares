@@ -5,7 +5,7 @@ import java from "../../assets/images/java.png";
 import python from "../../assets/images/python.png";
 import cyber from "../../assets/images/cyber.jpg";
 import design from "../../assets/images/design.png";
-import react from "../../assets/images/react.png";
+import mern from "../../assets/images/mern.png";
 import cloud from "../../assets/images/cloud.png";
 import Digital from "../../assets/images/Digital.jpg";
 import testing from "../../assets/images/testing.png";
@@ -26,7 +26,7 @@ const courses = [
     title: "MERN Stack",
     desc: "Build dynamic applications using MongoDB, Express, React and Node.",
     duration: "4 Months",
-    image: react,
+    image: mern,
   },
   
   {
@@ -63,7 +63,7 @@ const courses = [
 
 function Courses() {
   return (
-    <section className="courses-section py-5">
+    <section className="courses-section py-5" id="courses">
       <div className="container">
 
         <div className="text-center mb-5">

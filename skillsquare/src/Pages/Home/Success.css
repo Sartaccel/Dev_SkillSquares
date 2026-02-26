@@ -1,4 +1,17 @@
-/* SECTION HEADER */
+/* ================= ROOT COLORS ================= */
+
+:root {
+  --primary: #1b9b8e;
+  --primary-dark: #15877c;
+  --primary-light: #e0f4f2;
+  --section-bg: #f3fbfa;
+  --text-dark: #1f2933;
+  --text-light: #6b6b6b;
+  --border-light: rgba(0, 0, 0, 0.15);
+}
+
+/* ================= SECTION HEADER ================= */
+
 .section-header {
   margin-bottom: 70px;
 }
@@ -6,39 +19,44 @@
 .section-header h2 {
   font-size: 38px;
   font-weight: 700;
-  color: #3d3d3d;
+  color: var(--text-dark);
 }
 
 .section-header h2 span {
-  color: #ff6b00;
+  color: var(--primary);
 }
 
 .section-header p {
   margin-top: 15px;
   font-size: 16px;
-  color: #6b6b6b;
-}/* SECTION BACKGROUND */
+  color: var(--text-light);
+}
+
+/* ================= SECTION BACKGROUND ================= */
+
 .success-section {
-  background: #e7ddd2;
+  background: var(--section-bg);
   padding: 100px 0;
   position: relative;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .testimonial-card {
   padding: 20px 30px;
   position: relative;
   animation: floatCard 6s ease-in-out infinite;
 }
 
-/* Slow floating animation */
+/* Floating animation */
 @keyframes floatCard {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
 
-/* IMAGE WRAPPER */
+/* ================= IMAGE WRAPPER ================= */
+
 .image-wrapper {
   position: relative;
   width: 140px;
@@ -46,12 +64,12 @@
   margin: 0 auto 25px;
 }
 
-/* Blob Background */
+/* Teal Blob Background */
 .blob {
   position: absolute;
   width: 140px;
   height: 140px;
-  background: #eab9a1;
+  background: var(--primary-light);
   border-radius: 50% 60% 50% 70%;
   animation: blobMove 8s infinite ease-in-out;
 }
@@ -71,35 +89,40 @@
   top: 5px;
   left: 5px;
   object-fit: cover;
+  border: 3px solid var(--primary);
 }
 
-/* NAME */
+/* ================= NAME ================= */
+
 .testimonial-card h4 {
   font-weight: 600;
   margin-bottom: 15px;
-  color: #3d3d3d;
+  color: var(--text-dark);
 }
 
-/* REVIEW TEXT */
+/* ================= REVIEW TEXT ================= */
+
 .testimonial-card p {
   font-size: 16px;
   color: #555;
   line-height: 1.8;
 }
 
-/* Vertical Divider */
+/* ================= VERTICAL DIVIDER ================= */
+
 .with-border {
-  border-right: 1px dashed rgba(0, 0, 0, 0.2);
+  border-right: 1px dashed var(--border-light);
 }
 
-/* Decorative small circles */
+/* ================= DECORATIVE FLOATING DOTS ================= */
+
 .success-section::before,
 .success-section::after {
   content: "";
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 2px solid #000;
+  border: 2px solid var(--primary-dark);
   border-radius: 50%;
   animation: floatDot 5s infinite ease-in-out alternate;
 }
@@ -119,15 +142,6 @@
   to { transform: translateY(-10px); }
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .with-border {
-    border-right: none;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-  }
-}
 /* Extra decorative circles */
 .success-section .container::before,
 .success-section .container::after {
@@ -135,7 +149,7 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  border: 2px solid #000;
+  border: 2px solid var(--primary-dark);
   border-radius: 50%;
   animation: floatDot 6s infinite ease-in-out alternate;
 }
@@ -151,46 +165,58 @@
   top: 200px;
   right: 8%;
 }
-.image-wrapper {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 25px;
-}
+
 /* Big outline circle */
 .image-wrapper::before {
   content: "";
   position: absolute;
   width: 28px;
   height: 28px;
-  border: 2px solid #000;
+  border: 2px solid var(--primary-dark);
   border-radius: 50%;
   top: -10px;
   left: -20px;
   animation: floatCircle 4s ease-in-out infinite alternate;
 }
 
-/* Small filled black dot */
+/* Small filled dot */
 .image-wrapper::after {
   content: "";
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #000;
+  background: var(--primary-dark);
   border-radius: 50%;
   top: 10px;
   right: -15px;
   animation: floatCircle 3s ease-in-out infinite alternate;
 }
 
-/* Small peach soft dot */
+/* Soft teal dot */
 .image-wrapper .soft-dot {
   position: absolute;
   width: 14px;
   height: 14px;
-  background: #eab9a1;
+  background: var(--primary-light);
   border-radius: 50%;
   bottom: -8px;
   left: 15px;
   animation: floatCircle 5s ease-in-out infinite alternate;
+}
+
+/* Floating animation */
+@keyframes floatCircle {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .with-border {
+    border-right: none;
+    border-bottom: 1px dashed var(--border-light);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
 }

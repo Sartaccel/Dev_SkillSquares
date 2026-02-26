@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import heroImage from "../../assets/images/hero.jpeg"; // adjust path if needed
 import WhyChoose from "./WhyChoose";
@@ -31,16 +32,25 @@ function Home() {
         </p>
 
         <div className="hero-buttons">
-          <button className="btn primary-btn">
-            View Courses
-            <FaArrowRight className="arrow-icon" />
-          </button>
 
-          <button className="btn primary-btn">
-            <FaPhoneAlt className="call-icon" />
-            Request a Call Back
-          </button>
-        </div>
+  <button
+  className="btn primary-btn"
+  onClick={() =>
+    document.getElementById("courses")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+>
+  View Courses
+  <FaArrowRight className="arrow-icon" />
+</button>
+
+  <Link to="/contact" className="btn primary-btn">
+    <FaPhoneAlt className="call-icon" />
+    Request a Call Back
+  </Link>
+
+</div>
       </div>
     </section>
     <WhyChoose/>

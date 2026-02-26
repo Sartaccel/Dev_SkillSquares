@@ -1,0 +1,170 @@
+/* ===============================
+   CONTACT SECTION
+================================= */
+.contact-section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-light));
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Prevent Bootstrap override */
+.contact-wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   HEADER
+================================= */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgb(0, 89, 74);
+}
+
+.header p {
+  color: var(--primary-dark);
+}
+
+/* ===============================
+   FORM CARD
+================================= */
+.form-container {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   GRID
+================================= */
+.form-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===============================
+   LABELS
+================================= */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--primary-dark);
+}
+
+/* ===============================
+   INPUTS
+================================= */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #e6e6e6;
+  background: #f9f9f9;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(27, 155, 142, 0.15);
+  outline: none;
+  background: var(--white);
+}
+
+/* ===============================
+   BUTTON
+================================= */
+.submit-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(27, 155, 142, 0.3);
+}
+
+/* ===============================
+   SUCCESS MESSAGE
+================================= */
+.success-message {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   PRIVACY NOTICE
+================================= */
+.privacy-notice {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+}
+
+/* ===============================
+   FLOATING BACKGROUND
+================================= */
+.floating-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  background: var(--primary-dark);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 { width: 60px; height: 60px; top: 10%; left: 10%; }
+.circle-2 { width: 40px; height: 40px; top: 25%; right: 15%; }
+.circle-3 { width: 80px; height: 80px; bottom: 15%; left: 20%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
