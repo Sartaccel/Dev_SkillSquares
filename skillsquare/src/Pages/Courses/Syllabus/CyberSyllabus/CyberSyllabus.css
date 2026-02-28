@@ -1,0 +1,130 @@
+.cybersyllabus {
+  background-color: #e0f4f2;
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+.cybersyllabus-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.cybersyllabus-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1b3c3a;
+}
+
+.cybersyllabus-accordion-item {
+  background: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cybersyllabus-accordion-item:hover {
+  transform: translateY(-3px);
+}
+
+.cybersyllabus-accordion-header {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #f4fbfa;
+  color: #134e4a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cybersyllabus-accordion-header:hover {
+  background: #d4f1ee;
+}
+
+.cybersyllabus-accordion-content {
+  padding: 20px 30px;
+}
+
+.cybersyllabus-accordion-content li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.cybersyllabus-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #1b9b8e;
+}
+
+.cybersyllabus-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.cybersyllabus-enroll-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cybersyllabus-enroll-btn {
+  padding: 15px 42px;
+  background: #1b9b8e;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(27, 155, 142, 0.25);
+}
+
+.cybersyllabus-enroll-btn:hover {
+  background: #168579;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cybersyllabus {
+    padding: 60px 15px;
+  }
+
+  .cybersyllabus-title {
+    font-size: 26px;
+  }
+
+  .cybersyllabus-accordion-header {
+    font-size: 15px;
+    padding: 16px 18px;
+  }
+
+  .cybersyllabus-accordion-content {
+    padding: 18px 20px;
+  }
+.cybersyllabus-enroll-btn{
+  width: auto;
+}
+}
+
+@media (max-width: 576px) {
+  .cybersyllabus-title {
+    font-size: 22px;
+  }
+
+  .cybersyllabus-accordion-header {
+    font-size: 14px;
+  }
+
+  .cybersyllabus-enroll-btn{
+  width: auto;
+}
+}

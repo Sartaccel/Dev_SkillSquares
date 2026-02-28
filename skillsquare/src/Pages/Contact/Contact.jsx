@@ -104,8 +104,7 @@ function Contact() {
                 >
                   <option value="">Select a topic</option>
                   <option value="general">General Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="sales">Sales & Pricing</option>
+                  <option value="internship">Internship</option>
                   <option value="careers">Careers</option>
                 </select>
               </div>

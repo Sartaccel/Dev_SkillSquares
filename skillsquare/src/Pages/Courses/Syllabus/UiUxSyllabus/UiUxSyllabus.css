@@ -1,0 +1,127 @@
+.uiuxsyllabus {
+  background-color: #e0f4f2;
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+.uiuxsyllabus-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.uiuxsyllabus-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1b3c3a;
+}
+
+.uiuxsyllabus-accordion-item {
+  background: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.uiuxsyllabus-accordion-item:hover {
+  transform: translateY(-3px);
+}
+
+.uiuxsyllabus-accordion-header {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #f4fbfa;
+  color: #134e4a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.uiuxsyllabus-accordion-header:hover {
+  background: #d4f1ee;
+}
+
+.uiuxsyllabus-accordion-content {
+  padding: 20px 30px;
+}
+
+.uiuxsyllabus-accordion-content li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.uiuxsyllabus-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #1b9b8e;
+}
+
+.uiuxsyllabus-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.uiuxsyllabus-enroll-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.uiuxsyllabus-enroll-btn {
+  padding: 15px 42px;
+  background: #1b9b8e;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(27, 155, 142, 0.25);
+}
+
+.uiuxsyllabus-enroll-btn:hover {
+  background: #168579;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .uiuxsyllabus {
+    padding: 60px 15px;
+  }
+
+  .uiuxsyllabus-title {
+    font-size: 26px;
+  }
+
+  .uiuxsyllabus-accordion-header {
+    font-size: 15px;
+    padding: 16px 18px;
+  }
+
+  .uiuxsyllabus-accordion-content {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .uiuxsyllabus-title {
+    font-size: 22px;
+  }
+
+  .uiuxsyllabus-accordion-header {
+    font-size: 14px;
+  }
+
+  .uiuxsyllabus-enroll-btn {
+    width:auto;
+  }
+}

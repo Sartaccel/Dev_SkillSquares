@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Careers.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 /* Import local logos */
@@ -94,6 +95,12 @@ const jobs = [
 
 function Careers() {
   const [currentPage, setCurrentPage] = useState(1);
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}, [currentPage]);
   const jobsPerPage = 6;
 
   const indexOfLastJob = currentPage * jobsPerPage;
@@ -112,7 +119,7 @@ function Careers() {
 
         <div className="row g-4">
           {currentJobs.map((job, index) => (
-            <div className="col-lg-4 col-md-6" key={index}>
+            <div className="col-lg-4 col-md-6 d-flex" key={index}>
               <div className="job-card">
 
                 <div className="job-header">
@@ -129,8 +136,10 @@ function Careers() {
                 </div>
 
                 <div className="job-buttons">
-                  <button className="apply-btn">Apply Now</button>
-                </div>
+  <Link to="/apply">
+    <button className="apply-btn">Apply Now</button>
+  </Link>
+</div>
 
               </div>
             </div>

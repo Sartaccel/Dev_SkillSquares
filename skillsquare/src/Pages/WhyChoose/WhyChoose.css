@@ -51,6 +51,16 @@
   z-index: 2;
   overflow: hidden;
 }
+/* Make Bootstrap columns flexible */
+.row > [class*="col-"] {
+  display: flex;
+}
+
+/* Make cards stretch equally */
+.feature-card {
+  flex: 1;
+  width: 100%;
+}
 
 /* Hover Effect */
 .feature-card:hover {
@@ -89,16 +99,31 @@
 }
 
 /* ================= COUNTERS ================= */
+/* ================= COUNTER BOX ================= */
 
-.counter-box h2 {
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--primary);
+.counter-box {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Number */
+.counter-box h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;   /* 👈 push text down */
+  line-height: 1;
+}
+
+/* Label */
 .counter-box p {
+  font-size: 15px;
   font-weight: 500;
   color: #555;
+  margin-top: 5px;       /* 👈 extra spacing */
+  margin-bottom: 0;
 }
 
 /* ================= FLOATING SQUARES ================= */
@@ -146,5 +171,140 @@
   100% {
     transform: translateY(-120vh) rotate(360deg);
     opacity: 0;
+  }
+}
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+========================================= */
+
+/* -------- Large Tablets (≤1200px) -------- */
+@media (max-width: 1200px) {
+  .why-section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .counter-box h2 {
+    font-size: 34px;
+  }
+}
+
+/* -------- Tablets (≤991px) -------- */
+@media (max-width: 991px) {
+  .why-section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-sub {
+    font-size: 14px;
+  }
+
+  .feature-card {
+    padding: 22px;
+    
+  }
+
+  .feature-card .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .counter-box h2 {
+    font-size: 30px;
+  }
+}
+
+/* -------- Mobile (≤768px) -------- */
+@media (max-width: 768px) {
+  .why-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-sub {
+    font-size: 13px;
+  }
+
+  .feature-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .feature-card:hover {
+    transform: none; /* disable heavy hover on mobile */
+  }
+
+  .feature-card .icon {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .counter-box h2 {
+    font-size: 26px;
+  }
+
+  .counter-box p {
+    font-size: 14px;
+  }
+}
+
+/* -------- Small Mobile (≤480px) -------- */
+@media (max-width: 480px) {
+  .why-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 20px!important;
+  }
+
+  .section-sub {
+    font-size: 12px!important;
+  }
+
+  .feature-card {
+    padding: 18px;
+  }
+  .feature-card h5{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .feature-card p {
+    font-size: 14px;
+  }
+  .feature-card .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .counter-box h2 {
+    font-size: 16px ;
+  }
+
+  .counter-box p {
+    font-size: 14px;
+  }
+
+  /* Smaller floating squares */
+  .squares span {
+    width: 12px;
+    height: 12px;
   }
 }

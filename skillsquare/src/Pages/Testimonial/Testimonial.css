@@ -1,47 +1,26 @@
 /* ===============================
-   ROOT COLORS
-================================= */
-:root {
-  --primary: #1b9b8e;
-  --primary-dark: #15877c;
-  --primary-light: #e0f4f2;
-  --text-dark: #3d3d3d;
-  --text-muted: #6b6b6b;
-  --card-shadow: rgba(0, 0, 0, 0.05);
-  --card-hover: rgba(27, 155, 142, 0.15);
-}
-
-/* ===============================
    SECTION
 ================================= */
-.reviews-section {
+.testimonial-section {
   background: linear-gradient(135deg, var(--primary-light), #ffffff);
   padding: 100px 0;
   overflow: hidden;
 }
 
-/* ===============================
-   HEADING
-================================= */
-.review-heading {
+/* Heading */
+.testimonial-heading {
   font-size: 42px;
   font-weight: 700;
   color: var(--text-dark);
 }
 
-.review-heading span {
-  color: var(--primary);
-}
-
-.review-sub {
+.testimonial-sub {
   color: var(--text-muted);
   font-size: 18px;
 }
 
-/* ===============================
-   SCROLL CONTAINER
-================================= */
-.review-container {
+/* Container */
+.testimonial-container {
   height: 40rem;
   overflow: hidden;
   border-radius: 1.5rem;
@@ -49,13 +28,13 @@
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
-.review-container.reverse {
+.testimonial-container.reverse {
   mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
   -webkit-mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
 }
 
-/* Scroll wrapper */
-.scroll-wrapper {
+/* Scroll */
+.testimonial-scroll {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -69,7 +48,7 @@
   animation: scrollBottomToTop 60s linear infinite;
 }
 
-.review-container:hover .scroll-wrapper {
+.testimonial-container:hover .testimonial-scroll {
   animation-play-state: paused;
 }
 
@@ -84,10 +63,8 @@
   100% { transform: translateY(0); }
 }
 
-/* ===============================
-   CARD
-================================= */
-.review-card {
+/* Card */
+.testimonial-card {
   background: #ffffff;
   border-radius: 18px;
   padding: 25px;
@@ -96,66 +73,42 @@
   transition: 0.4s ease;
 }
 
-.review-card:hover {
+.testimonial-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 40px var(--card-hover);
 }
 
-/* ===============================
-   HEADER
-================================= */
-.review-header {
+/* Header */
+.testimonial-header {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.emoji {
-  font-size: 28px;
-  margin-right: 12px;
-}
-
-.name {
-  font-weight: 600;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-.role {
-  font-size: 13px;
-  color: #999;
-  margin: 0;
-}
-
-/* ===============================
-   STARS
-================================= */
-.stars {
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-/* ===============================
-   TEXT
-================================= */
-.review-text {
+.testimonial-text {
   color: #555;
   font-size: 15px;
   line-height: 1.6;
   font-style: italic;
 }
 
-/* ===============================
-   RESPONSIVE
-================================= */
+/* Responsive */
 @media (max-width: 991px) {
-  .review-container {
+  .testimonial-container {
     height: 30rem;
   }
 }
 
 @media (max-width: 768px) {
-  .review-heading {
+  .testimonial-heading {
     font-size: 28px;
   }
+}
+@media (max-width: 576px) {
+  .testimonial-heading {
+    font-size: 20px;
+  }
+  .testimonial-sub {
+    font-size: 14px;
+}
 }
