@@ -16,15 +16,16 @@
 
 .courses-section {
   background: var(--section-bg);
-  padding-top: 7rem !important;
+  padding: clamp(4rem, 6vw, 7rem) 1rem;
 }
 
 /* ================= SECTION TITLE ================= */
 
 .section-title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(22px, 4vw, 36px);
   color: var(--text-dark);
+  text-align: center;
 }
 
 .section-title span {
@@ -33,37 +34,38 @@
 
 .section-sub {
   color: var(--text-light);
-  font-size: 16px;
+  font-size: clamp(13px, 2vw, 16px);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* ================= CARD ================= */
 
 .course-card {
   background: var(--white);
-  border-radius: 18px;
-  padding: 30px;
-  height: 100%;
+  border-radius: 16px;
+  padding: clamp(18px, 3vw, 30px);
+  width: 100%;
   transition: all 0.4s ease;
   box-shadow: 0 8px 25px var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .course-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 18px 40px var(--shadow-hover);
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px var(--shadow-hover);
 }
 
 /* ================= IMAGE ================= */
 
 .course-image {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .course-image img {
-  width: 70px;
+  width: clamp(50px, 6vw, 70px);
   transition: transform 0.4s ease;
 }
 
@@ -75,14 +77,15 @@
 
 .course-card h5 {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: clamp(16px, 2.5vw, 20px);
   color: var(--text-dark);
 }
 
 .course-card p {
   color: #555;
-  font-size: 14px;
-  margin-bottom: 20px;
+  font-size: clamp(12px, 2vw, 14px);
+  margin-bottom: 18px;
 }
 
 /* ================= FOOTER ================= */
@@ -91,10 +94,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+
 }
 
 .duration {
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -108,16 +115,35 @@
   border: 1.5px solid var(--primary);
   padding: 6px 14px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   color: var(--primary);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
 }
 
 .learn-btn:hover {
   background: var(--primary);
   color: var(--white);
   transform: translateX(4px);
+}
+
+/* ================= MOBILE FIX (Extra Small <576px) ================= */
+
+@media (max-width: 575px) {
+  .course-card {
+    padding: 18px;
+  }
+
+  .course-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .learn-btn {
+    width: auto;
+    justify-content: center;
+  }
 }

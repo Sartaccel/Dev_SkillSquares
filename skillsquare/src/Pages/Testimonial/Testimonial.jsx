@@ -31,11 +31,11 @@ const reviews = [
 const ReviewColumn = ({ reverse }) => {
   return (
     <div className="col-12 col-md-6 col-lg-4">
-      <div className={`review-container ${reverse ? "reverse" : ""}`}>
-        <div className={`scroll-wrapper ${reverse ? "scroll-b2t" : "scroll-t2b"}`}>
+      <div className={`testimonial-container ${reverse ? "reverse" : ""}`}>
+        <div className={`testimonial-scroll ${reverse ? "scroll-b2t" : "scroll-t2b"}`}>
           {[...reviews, ...reviews].map((item, index) => (
-            <div className="review-card" key={index}>
-              <div className="review-header">
+            <div className="testimonial-card" key={index}>
+              <div className="testimonial-header">
                 <span className="emoji">{item.emoji}</span>
                 <div>
                   <p className="name">{item.name}</p>
@@ -43,7 +43,7 @@ const ReviewColumn = ({ reverse }) => {
                 </div>
               </div>
               <div className="stars">★★★★★</div>
-              <p className="review-text">"{item.text}"</p>
+              <p className="testimonial-text">"{item.text}"</p>
             </div>
           ))}
         </div>
@@ -54,14 +54,14 @@ const ReviewColumn = ({ reverse }) => {
 
 function Testimonial() {
   return (
-    <section className="reviews-section">
+    <section className="testimonial-section">
       <div className="container">
 
         <div className="text-center mb-5">
-          <h1 className="review-heading">
+          <h1 className="testimonial-heading">
             What Our Customers Say
           </h1>
-          <p className="review-sub">
+          <p className="testimonial-sub">
             Hear from thousands of happy users who trust our service.
           </p>
         </div>

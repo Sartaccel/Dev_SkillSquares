@@ -1,0 +1,192 @@
+/* =========================
+   Section Background
+========================= */
+.pythonsyllabus {
+  background-color: #e0f4f2;
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+/* =========================
+   Main Container
+========================= */
+.pythonsyllabus-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   Title
+========================= */
+.pythonsyllabus-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1b3c3a;
+}
+
+/* =========================
+   Accordion Card
+========================= */
+.pythonsyllabus-accordion-item {
+  background: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.pythonsyllabus-accordion-item:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   Header
+========================= */
+.pythonsyllabus-accordion-header {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #f4fbfa;
+  color: #134e4a;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.pythonsyllabus-accordion-header:hover {
+  background: #d4f1ee;
+}
+
+/* =========================
+   Content
+========================= */
+.pythonsyllabus-accordion-content {
+  padding: 20px 30px;
+}
+
+.pythonsyllabus-accordion-content ul {
+  padding-left: 18px;
+}
+
+.pythonsyllabus-accordion-content li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* =========================
+   Arrow
+========================= */
+.pythonsyllabus-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #1b9b8e;
+}
+
+.pythonsyllabus-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   Enroll Button
+========================= */
+.pythonsyllabus-enroll-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pythonsyllabus-enroll-btn {
+  padding: 15px 42px;
+  background: #1b9b8e;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(27, 155, 142, 0.25);
+}
+
+.pythonsyllabus-enroll-btn:hover {
+  background: #168579;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS
+=================================================== */
+
+/* Large Screens */
+@media (max-width: 1200px) {
+  .pythonsyllabus-container {
+    max-width: 850px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 992px) {
+  .pythonsyllabus-container {
+    max-width: 720px;
+  }
+
+  .pythonsyllabus-title {
+    font-size: 28px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .pythonsyllabus {
+    padding: 60px 15px;
+  }
+
+  .pythonsyllabus-accordion-header {
+    font-size: 15px;
+    padding: 16px 18px;
+  }
+
+  .pythonsyllabus-accordion-content {
+    padding: 18px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .pythonsyllabus-title {
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+
+  .pythonsyllabus-accordion-header {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .pythonsyllabus-accordion-content li {
+    font-size: 13px;
+  }
+
+  .pythonsyllabus-enroll-btn {
+    width: auto;
+  }
+}
+
+/* Small Mobile (320px) */
+@media (max-width: 360px) {
+  .pythonsyllabus-accordion-header {
+    font-size: 13px;
+  }
+
+  .pythonsyllabus-accordion-content li {
+    font-size: 12px;
+  }
+}

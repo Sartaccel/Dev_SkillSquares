@@ -1,0 +1,140 @@
+/* Section Background */
+.javasyllabus {
+  background-color: #e0f4f2;
+  padding: 60px 20px;
+}
+
+/* Main Container */
+.javasyllabus-container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.javasyllabus-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #1b3c3a;
+}
+
+/* Accordion Card */
+.javasyllabus-accordion-item {
+  background: #ffffff;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.javasyllabus-accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Header */
+.javasyllabus-accordion-header {
+  padding: 16px 22px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4fbfa;
+  transition: 0.3s ease;
+  color: #134e4a;
+}
+
+.javasyllabus-accordion-header:hover {
+  background: #d4f1ee;
+}
+
+/* Content */
+.javasyllabus-accordion-content {
+  padding: 18px 28px;
+  background: #ffffff;
+}
+
+.javasyllabus-accordion-content ul {
+  padding-left: 18px;
+}
+
+.javasyllabus-accordion-content li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Enroll Button Container */
+.javasyllabus-enroll-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Button */
+.javasyllabus-enroll-btn {
+  padding: 14px 38px;
+  background: #1b9b8e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 15px rgba(27, 155, 142, 0.25);
+}
+
+.javasyllabus-enroll-btn:hover {
+  background: #168579;
+  transform: translateY(-2px);
+}
+.javasyllabus-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #1b9b8e;
+}
+
+
+/* --------------------------
+   Responsive
+--------------------------- */
+
+@media (max-width: 992px) {
+  .javasyllabus-container {
+    max-width: 700px;
+  }
+  .javasyllabus-enroll-btn {
+    width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .javasyllabus-title {
+    font-size: 22px;
+  }
+
+  .javasyllabus-accordion-header {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .javasyllabus-accordion-content {
+    padding: 15px 18px;
+  }
+
+  .javasyllabus-accordion-content li {
+    font-size: 13px;
+  }
+
+  .javasyllabus-enroll-btn {
+        width: auto;
+
+  }
+}

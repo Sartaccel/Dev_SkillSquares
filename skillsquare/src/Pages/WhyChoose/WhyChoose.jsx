@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import {
   FaChalkboardTeacher,
   FaBookOpen,
@@ -32,41 +32,68 @@ const features = [
     title: "Flexible Learning Modes",
     desc: "Choose classroom, online, or hybrid learning modes based on your comfort."
   },
+   {
+    icon: <FaProjectDiagram />,
+    title: "Real-Time Projects",
+    desc: "Hands-on live projects to build strong practical knowledge."
+  },
   {
   icon: <FaBuilding />,
   title: "Internship Opportunities",
   desc: "Gain real-world exposure through internship programs with partner companies."
 },
-  {
-    icon: <FaProjectDiagram />,
-    title: "Real-Time Projects",
-    desc: "Hands-on live projects to build strong practical knowledge."
-  }
+ 
 ];
 
 function Counter({ end, label }) {
   const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startCounter();
+        } else {
+          setCount(0); // Reset when leaving view
+          hasAnimated.current = false;
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const startCounter = () => {
+    if (hasAnimated.current) return;
+
+    hasAnimated.current = true;
+
     let start = 0;
     const duration = 2000;
     const increment = end / (duration / 16);
 
     const timer = setInterval(() => {
       start += increment;
+
       if (start >= end) {
         start = end;
         clearInterval(timer);
       }
+
       setCount(Math.floor(start));
     }, 16);
-
-    return () => clearInterval(timer);
-  }, [end]);
+  };
 
   return (
-    <div className="col-md-3 col-6 text-center counter-box">
-      <h2>{count}+</h2>
+    <div className="col-md-3 text-center counter-box" ref={counterRef}>
+      <h2 className="fw-bold ">{count}+</h2>
       <p>{label}</p>
     </div>
   );
@@ -133,8 +160,8 @@ function WhyChoose() {
 
         {/* Counters */}
         <div className="row mt-5" data-aos="fade-up">
-          <Counter end={5000} label="Students Trained" />
-          <Counter end={25} label="Courses Offered" />
+          <Counter end={500} label="Students Trained" />
+          <Counter end={10} label="Courses Offered" />
           <Counter end={120} label="Hiring Partners" />
           <Counter end={98} label="Placement Success %" />
         </div>
