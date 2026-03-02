@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./JavaSyllabus.css";
 import { FiChevronDown } from "react-icons/fi";
 const syllabusData = [
@@ -166,9 +167,11 @@ const JavaSyllabus = () => {
       ))}
 
       <div className="javasyllabus-enroll-container">
-        <button className="javasyllabus-enroll-btn">
-          Enroll Now
-        </button>
+        <Link to="/enroll">
+  <button className="javasyllabus-enroll-btn">
+    Enroll Now
+  </button>
+</Link>
       </div>
     </div>
   </div>

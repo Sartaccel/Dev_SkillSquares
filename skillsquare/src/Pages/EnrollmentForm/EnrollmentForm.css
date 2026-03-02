@@ -1,0 +1,142 @@
+/* Container */
+.enrollment-container {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #007f7f, #00b3b3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* Card */
+.enrollment-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 750px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007f7f;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Row - 2 Columns */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #00b3b3;
+  box-shadow: 0 0 4px rgba(0, 179, 179, 0.3);
+  outline: none;
+}
+
+/* Button */
+.submit-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: #007f7f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #005f5f;
+}
+
+/* Responsive */
+
+/* ===============================
+   992px Screen (Large Tablets)
+================================= */
+@media (max-width: 992px) {
+
+  .enrollment-card {
+    max-width: 650px;
+    padding: 25px;
+  }
+
+  .form-row {
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 9px;
+    font-size: 14px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .enrollment-card {
+    padding: 20px;
+  }
+}

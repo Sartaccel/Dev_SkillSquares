@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import "./DigitalMarketingSyllabus.css";
 
@@ -116,9 +117,12 @@ const DigitalMarketingSyllabus = () => {
         ))}
 
         <div className="digitalmarketing-enroll-container">
+          <Link to="/enroll">
+
           <button className="digitalmarketing-enroll-btn">
             Enroll Now
           </button>
+          </Link>
         </div>
       </div>
     </div>
