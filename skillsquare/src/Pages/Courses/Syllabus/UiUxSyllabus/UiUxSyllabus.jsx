@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import "./UiUxSyllabus.css";
 
@@ -115,9 +116,11 @@ const UiUxSyllabus = () => {
         ))}
 
         <div className="uiuxsyllabus-enroll-container">
+            <Link to="/enroll">
           <button className="uiuxsyllabus-enroll-btn">
             Enroll Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import "./SoftwareTestingSyllabus.css";
 
@@ -115,9 +116,11 @@ const SoftwareTestingSyllabus = () => {
         ))}
 
         <div className="testingsyllabus-enroll-container">
+            <Link to="/enroll">
           <button className="testingsyllabus-enroll-btn">
             Enroll Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -105,12 +105,11 @@
   font-size: 1rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-hover));
   color: var(--white);
-  border: 2px solid var(--white);
+  /* border: 2px solid var(--white); */
 }
 
 .primary-btn:hover {
   transform: scale(1.05);
-  box-shadow: 5px 5px 0 #a2f9f0;
   background: var(--white);
   color: var(--primary-hover);
   border: 1px solid var(--primary-hover);

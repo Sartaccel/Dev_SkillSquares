@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* Desktop Button */}
         <div className="nav-btn">
-          <a href="/contact" className="enroll-btn">
+          <a href="/enroll" className="enroll-btn">
             Enroll Now
           </a>
         </div>

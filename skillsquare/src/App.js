@@ -22,6 +22,11 @@ import UiUxSyllabus from "./Pages/Courses/Syllabus/UiUxSyllabus/UiUxSyllabus";
 import DigitalMarketingSyllabus from "./Pages/Courses/Syllabus/DigitalMarketingSyllabus/DigitalMarketingSyllabus";
 import DevopsSyllabus from "./Pages/Courses/Syllabus/DevopsSyllabus/DevopsSyllabus";
 import SoftwareTestingSyllabus from "./Pages/Courses/Syllabus/SoftwareTestingSyllabus/SoftwareTestingSyllabus";
+import EnrollmentForm from "./Pages/EnrollmentForm/EnrollmentForm";
+import ServicePopup from "./Components/ServicePopup/ServicePopup";
+
+
+
 function App() {
 
   useEffect(() => {
@@ -33,7 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-
+      <ServicePopup/>
       <ScrollToTop />
       <Navbar />
 
@@ -57,7 +62,7 @@ function App() {
         <Route path="/digital-marketing" element={<DigitalMarketingSyllabus />} />
         <Route path="/devops" element={<DevopsSyllabus />} />
         <Route path="/software-testing" element={<SoftwareTestingSyllabus />} />
-
+        <Route path="/enroll" element={<EnrollmentForm />} />
 
       </Routes>
 
