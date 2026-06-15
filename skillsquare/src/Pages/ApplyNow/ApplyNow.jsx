@@ -7,8 +7,8 @@ function ApplyNow() {
     lastName: "",
     email: "",
     phone: "",
-    position: "",
-    experience: "",
+    course: "",
+    education: "",
     skills: "",
     resume: null,
   });
@@ -26,22 +26,28 @@ function ApplyNow() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    for (let key in formData) {
-      if (!formData[key]) {
-        alert("Please fill all required fields.");
-        return;
-      }
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.course ||
+      !formData.education ||
+      !formData.skills
+    ) {
+      alert("Please fill all required fields.");
+      return;
     }
 
-    alert("Application Submitted Successfully!");
+    alert("Course Application Submitted Successfully!");
   };
 
   return (
     <div className="apply-wrapper">
       <div className="apply-card">
-        <h2 className="apply-title">Job Application Form</h2>
+        <h2 className="apply-title">Course Application Form</h2>
         <p className="apply-subtitle">
-          Please Fill Out the Form Below to Submit Your Job Application!
+          Fill the form below to enroll in your preferred course.
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -62,7 +68,7 @@ function ApplyNow() {
           {/* Email & Phone */}
           <div className="apply-row">
             <div className="apply-group">
-              <label>E-mail *</label>
+              <label>Email *</label>
               <input type="email" name="email" onChange={handleChange} required />
             </div>
 
@@ -72,54 +78,63 @@ function ApplyNow() {
             </div>
           </div>
 
-          {/* Position & Experience */}
-          <div className="apply-row">
-            <div className="apply-group">
-              <label>Applied Position *</label>
-              <input type="text" name="position" onChange={handleChange} required />
-            </div>
-
-            <div className="apply-group">
-              <label>Experience *</label>
-              <select name="experience" onChange={handleChange} required>
-                <option value="">Select Experience</option>
-                <option value="Fresher">Fresher</option>
-                <option value="0-1 Years">0 - 1 Years</option>
-                <option value="1-3 Years">1 - 3 Years</option>
-                <option value="3-5 Years">3 - 5 Years</option>
-                <option value="5+ Years">5+ Years</option>
-              </select>
-            </div>
+          {/* Course Selection */}
+          <div className="apply-group">
+            <label>Select Course *</label>
+            <select name="course" onChange={handleChange} required>
+              <option value="">Choose Course</option>
+              <option>Workplace Readiness & Employability Skills</option>
+              <option>Tourism & Travel Operations Management</option>
+              <option>Hospitality & Guest Experience Excellence</option>
+              <option>Home Care & Assisted Living Services</option>
+              <option>Digital Skills for Modern Jobs</option>
+              <option>Sales & Marketing Strategies</option>
+              <option>Customer Support & CRM Training</option>
+              <option>Entrepreneurship & Startup Skills</option>
+              <option>Customer Branding & Career Development</option>
+              <option>Personal Branding & Career Development</option>
+            </select>
           </div>
 
-          {/* Skills */}
+          {/* Education */}
           <div className="apply-group">
-            <label>Skills *</label>
+            <label>Educational Qualification *</label>
             <input
               type="text"
-              name="skills"
-              placeholder="Example: React, Node.js, Python"
+              name="education"
+              placeholder="Example: B.Sc, B.A, B.Tech"
               onChange={handleChange}
               required
             />
           </div>
 
-          {/* Resume Upload */}
-          <div className="apply-upload">
-            <label>Upload Resume *</label>
+          {/* Skills */}
+          {/* <div className="apply-group">
+            <label>Skills / Interests *</label>
+            <input
+              type="text"
+              name="skills"
+              placeholder="Example: Communication, Basic Computer Skills"
+              onChange={handleChange}
+              required
+            />
+          </div> */}
+
+          {/* Resume (Optional) */}
+          {/* <div className="apply-upload">
+            <label>Upload Resume (Optional)</label>
             <input
               type="file"
               name="resume"
               className="apply-file"
               onChange={handleChange}
               accept=".pdf,.doc,.docx"
-              required
             />
-          </div>
+          </div> */}
 
           <div className="apply-submit">
             <button type="submit" className="applynow-btn">
-              Apply
+              Apply Now
             </button>
           </div>
 
