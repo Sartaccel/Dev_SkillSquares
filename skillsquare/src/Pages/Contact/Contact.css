@@ -175,3 +175,292 @@ textarea:focus {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
 }
+.secondd p{
+  color: black;
+}
+.secondd {
+    justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+  /* background: #fff; */
+  /* border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08); */
+}
+
+.secondd h2 {
+
+  font-size: 32px;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.secondd p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 18px;
+}
+
+.secondd blockquote {
+
+  text-align: center;
+  margin: 25px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-left: 5px solid #0d6efd;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .secondd {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .secondd h2 {
+    font-size: 26px;
+  }
+
+  .secondd p {
+    font-size: 16px;
+  }
+
+  .secondd blockquote {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+.inquiry-section {
+  width: 100%;
+  
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  min-width: 220px;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 50px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.form-container {
+  position: relative;
+  margin-top: 35px;
+
+  background: transparent;
+  padding: 40px;
+  border-radius: 20px;
+  
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  animation: formOpen 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+  background: #f1f5f9;
+
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-grid textarea {
+  grid-column: span 2;
+  min-height: 120px;
+}
+
+.form-grid input,
+.form-grid textarea {
+  padding: 14px;
+  border: 1px solid #dbe1e8;
+  border-radius: 10px;
+  outline: none;
+}
+
+.submit-btn {
+  grid-column: span 2;
+
+  width: 220px;
+  margin: auto;
+
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes formOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid textarea,
+  .submit-btn {
+    grid-column: span 1;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.form-container {
+  position: relative;
+
+  width: 90%;
+  max-width: 1000px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #fff;
+  border-radius: 20px;
+
+  padding: 40px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+
+  animation: popup 0.35s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+  cursor: pointer;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: rotate(90deg);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

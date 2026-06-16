@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import { FaArrowRight } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -32,6 +33,9 @@ function Contact() {
     }, 3000);
   };
 
+const [activeForm, setActiveForm] = useState(null);
+  
+
   return (
     <section className="contact-section">
       <div className="floating-elements">
@@ -42,13 +46,15 @@ function Contact() {
 
       <div className="contact-wrapper">
         <div className="header">
-          <h1>Let's Connect</h1>
-          <p>
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          <h1>Learn. Grow. Get Hired.</h1>
+          {/* <p>
+           This positioning will make SkillSquare look like a modern employability and talent-tech company rather than a conventional training institute.
           </p>
+          */}
+          
         </div>
 
-        <div className="form-container">
+        {/* <div className="form-container">
           {success && (
             <div className="success-message">
               <strong>Thank you!</strong> Your message has been sent successfully.
@@ -130,8 +136,130 @@ function Contact() {
               <strong>Privacy Notice:</strong> We respect your privacy and will never share your personal information.
             </div>
           </form>
-        </div>
+        </div> */}
       </div>
+      <div className="secondd">
+  {/* <h2>Visionaries' Message</h2> */}
+
+  <p>
+    SkillSquare was founded with a simple observation: many students graduate
+    with degrees but struggle to meet industry expectations.
+      Having spent years working in talent acquisition, employee development,
+    leadership coaching, performance management, and workforce planning around
+    the globe, we understood exactly where the gap existed.
+      SkillSquare was created to bridge the gap between education and employment
+    through practical, industry-driven learning experiences.
+    We aim at Bridging Education and Employability Through Skills, Intelligence
+    & Opportunities.
+  </p>
+
+  <blockquote>
+    "SkillSquare is built by industry practitioners, not academicians."
+  </blockquote>
+
+</div>
+<section className="inquiry-section">
+
+      <div className="button-row">
+        <button
+          className="btn primary-btn"
+          onClick={() => setActiveForm("college")}
+        >
+          For Colleges <FaArrowRight className="arrow-icon" />
+        </button>
+
+        <button
+          className="btn primary-btn"
+          onClick={() => setActiveForm("corporate")}
+        >
+          For Corporates  <FaArrowRight className="arrow-icon" />
+        </button>
+
+        <button
+          // className="action-btn"
+          className="btn primary-btn"
+          onClick={() => setActiveForm("student")}
+        >
+          For Students  <FaArrowRight className="arrow-icon" />
+        </button>
+      </div>
+
+      {activeForm && (
+  <div
+    className="modal-overlay"
+    onClick={() => setActiveForm(null)}
+  >
+    <div
+      className="form-container"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+          <button
+            className="close-btn"
+            onClick={() => setActiveForm(null)}
+          >
+            ✕
+          </button>
+
+          {activeForm === "college" && (
+            <>
+              <h2>Book Workshop</h2>
+
+              <form className="form-grid">
+                <input type="text" placeholder="College Name" />
+                <input type="text" placeholder="Contact Person" />
+                <input type="email" placeholder="Email Address" />
+                <input type="tel" placeholder="Phone Number" />
+                <textarea placeholder="Workshop Requirement"></textarea>
+
+                <button type="submit" className="submit-btn">
+                  Submit Request
+                </button>
+              </form>
+            </>
+          )}
+
+          {activeForm === "corporate" && (
+            <>
+              <h2>Request Proposal</h2>
+
+              <form className="form-grid">
+                <input type="text" placeholder="Company Name" />
+                <input type="text" placeholder="Contact Person" />
+                <input type="email" placeholder="Email Address" />
+                <input type="tel" placeholder="Phone Number" />
+                <textarea placeholder="Business Requirement"></textarea>
+
+                <button type="submit" className="submit-btn">
+                  Submit Request
+                </button>
+              </form>
+            </>
+          )}
+
+          {activeForm === "student" && (
+            <>
+              <h2>Career Counselling</h2>
+
+              <form className="form-grid">
+                <input type="text" placeholder="Student Name" />
+                <input type="email" placeholder="Email Address" />
+                <input type="tel" placeholder="Phone Number" />
+                <input type="text" placeholder="Degree / Course" />
+                <textarea placeholder="Career Goals"></textarea>
+
+                <button type="submit" className="submit-btn">
+                  Book Session
+                </button>
+              </form>
+            </>
+          )}
+
+        </div>
+        </div>
+      )}
+
+    </section>
     </section>
   );
 }

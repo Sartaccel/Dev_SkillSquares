@@ -2,10 +2,11 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
-import heroImage from "../../assets/images/hero.jpeg"; // adjust path if needed
+import heroImage from "../../assets/images/hero.jpeg";
 import WhyChoose from "../WhyChoose/WhyChoose";
-import Courses from "../Courses/Courses";
 import Success from "../Success/Success";
+import About from "../About/About";
+
 function Home() {
   return (
     <>
@@ -18,16 +19,16 @@ function Home() {
       <div className="overlay"></div>
 
       <div className="container hero-content">
-        <h1 className="hero-title">
-          Welcome to <span>SkillSquare</span>
-        </h1>
-
-        <p className="hero-tagline">
-          Empowering Minds. Building Careers.
+        <p className="hero-title">
+         Transforming Students into <span>Industry-Ready Professionals</span>
         </p>
 
+        {/* <p className="hero-tagline">
+          Empowering Minds. Building Careers.
+        </p> */}
+
         <p className="hero-description">
-          Upgrade your skills with industry-focused training programs designed to turn beginners into professionals.
+          SkillSquare empowers students, colleges, and organizations through employability assessments, career guidance, future skills training, mentorship, and placement opportunities.
         </p>
 
         <div className="hero-buttons">
@@ -37,13 +38,21 @@ function Home() {
   className="btn primary-btn"
   onClick={() => window.scrollTo(0, 0)}
 >
-  View Courses
+  Schedule a Consultation
+  <FaArrowRight className="arrow-icon" />
+</Link>
+<Link
+  to="/courses"
+  className="btn primary-btn"
+  onClick={() => window.scrollTo(0, 0)}
+>
+ Start Your Assessment
   <FaArrowRight className="arrow-icon" />
 </Link>
 
   <Link to="/contact" className="btn primary-btn" onClick={() => window.scrollTo(0, 0)}>
     <FaPhoneAlt className="call-icon" />
-    Request a Call Back
+    Explore Partnership Opportunities
   </Link>
 
 </div>
@@ -53,7 +62,7 @@ function Home() {
     <Courses/>
     <Success/>
     </>
-  );  
+  );
 }
 
 export default Home;
