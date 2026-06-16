@@ -41,10 +41,12 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a href="/courses" onClick={handleNavigate}>
-              All Courses
+            <a href="/about" onClick={handleNavigate}>
+              About
             </a>
           </li>
+
+        
 
           <li>
             <a href="/testimonial" onClick={handleNavigate}>
