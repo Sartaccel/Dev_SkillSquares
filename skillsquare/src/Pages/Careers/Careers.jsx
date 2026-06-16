@@ -1,175 +1,106 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Careers.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-/* Import local logos */
-import company1 from "../../assets/images/sart.jpg";
-import company2 from "../../assets/images/tt.png";
-import company3 from "../../assets/images/truck.png";
 
-const jobs = [
-  // First 6 jobs (your previous ones)
-  {
-    logo: company1,
-    title: "UI / UX Designer",
-    desc: "Create compelling digital experiences aligned with business goals.",
-    type: "Full Time",
-    exp: "Min. 1 Year",
-    level: "Senior Level",
-  },
-  {
-    logo: company2,
-    title: "Product Designer",
-    desc: "Design scalable and innovative products.",
-    type: "Full Time",
-    exp: "Min. 2 Years",
-    level: "Mid Level",
-  },
-  {
-    logo: company3,
-    title: "UI Developer",
-    desc: "Develop responsive frontend applications.",
-    type: "Full Time",
-    exp: "Min. 1 Year",
-    level: "Junior Level",
-  },
-  {
-    logo: company1,
-    title: "Digital Marketing Executive",
-    desc: "Plan and execute SEO and social campaigns.",
-    type: "Full Time",
-    exp: "Min. 1 Year",
-    level: "Mid Level",
-  },
-  {
-    logo: company2,
-    title: "DevOps Engineer",
-    desc: "Manage CI/CD pipelines and cloud infrastructure.",
-    type: "Full Time",
-    exp: "Min. 2 Years",
-    level: "Senior Level",
-  },
-  {
-    logo: company3,
-    title: "Software Tester",
-    desc: "Perform manual and automation testing.",
-    type: "Full Time",
-    exp: "Min. 1 Year",
-    level: "Junior Level",
-  },
+import {
+  FaUserTie,
+  FaPlane,
+  FaConciergeBell,
+  FaHandsHelping,
+  FaLaptop,
+  FaChartLine,
+  FaHeadset,
+  FaLightbulb,
+  FaBullhorn,
+  FaUserGraduate,
+} from "react-icons/fa";
 
-  // NEW PAGE JOBS
+/* Courses Data */
+const courses = [
   {
-    logo: company1,
-    title: "Data Entry Operator",
-    desc: "Handle data management and documentation accurately.",
-    type: "Full Time",
-    exp: "Fresher",
-    level: "Entry Level",
+    title: "Workplace Readiness & Employability Skills",
+    desc: "Develop essential workplace behavior, communication, and job readiness skills.",
+    icon: <FaUserTie />,
   },
   {
-    logo: company2,
-    title: "Flutter Developer",
-    desc: "Build cross-platform mobile apps using Flutter.",
-    type: "Full Time",
-    exp: "1 Year Experience",
-    level: "Junior Level",
+    title: "Tourism & Travel Operations Management",
+    desc: "Learn travel planning, ticketing, and tourism service management.",
+    icon: <FaPlane />,
   },
   {
-    logo: company3,
-    title: "Business Development Executive",
-    desc: "Identify new business opportunities and manage clients.",
-    type: "Full Time",
-    exp: "Min. 1 Year",
-    level: "Mid Level",
+    title: "Hospitality & Guest Experience Excellence",
+    desc: "Master customer service and hospitality standards for global industries.",
+    icon: <FaConciergeBell />,
   },
   {
-    logo: company1,
-    title: "Poster Designer",
-    desc: "Design posters and creatives for marketing campaigns.",
-    type: "Full Time",
-    exp: "Fresher / 1 Year",
-    level: "Junior Level",
-  }
+    title: "Home Care & Assisted Living Services",
+    desc: "Gain skills in caregiving, patient assistance, and healthcare support.",
+    icon: <FaHandsHelping />,
+  },
+  {
+    title: "Digital Skills for Modern Jobs",
+    desc: "Learn digital tools, productivity software, and online work skills.",
+    icon: <FaLaptop />,
+  },
+  {
+    title: "Sales & Marketing Strategies",
+    desc: "Understand marketing techniques, branding, and sales strategies.",
+    icon: <FaChartLine />,
+  },
+  {
+    title: "Customer Support & CRM Training",
+    desc: "Handle customer queries and manage CRM tools effectively.",
+    icon: <FaHeadset />,
+  },
+  {
+    title: "Entrepreneurship & Startup Skills",
+    desc: "Build business ideas and learn startup fundamentals.",
+    icon: <FaLightbulb />,
+  },
+  {
+    title: "Customer Branding & Career Development",
+    desc: "Enhance personal branding and career growth strategies.",
+    icon: <FaBullhorn />,
+  },
+  {
+    title: "Personal Branding & Career Development",
+    desc: "Improve professional presence, resume, and interview skills.",
+    icon: <FaUserGraduate />,
+  },
 ];
 
 function Careers() {
-  const [currentPage, setCurrentPage] = useState(1);
-  useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}, [currentPage]);
-  const jobsPerPage = 6;
-
-  const indexOfLastJob = currentPage * jobsPerPage;
-  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
-
-  const totalPages = Math.ceil(jobs.length / jobsPerPage);
-
   return (
-    <section className="career-section py-5">
+    <section className="career-section">
       <div className="container">
 
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h4 className="fw-bold">Showing {jobs.length} Jobs</h4>
-        </div>
+        <div className="course-section">
+          <h2 className="text-center">Our Course Offerings</h2>
+          <p className="text-center mb-5">Duration: 35–40 Hours</p>
 
-        <div className="row g-4">
-          {currentJobs.map((job, index) => (
-            <div className="col-lg-4 col-md-6 d-flex" key={index}>
-              <div className="job-card">
+          <div className="row g-4">
+            {courses.map((course, index) => (
+              <div className="col-lg-6 col-md-6" key={index}>
+                <div className="course-card">
 
-                <div className="job-header">
-                  <img src={job.logo} alt="logo" />
+                  <div className="course-icon">{course.icon}</div>
+
+                  <div className="course-content">
+                    <h5>{course.title}</h5>
+                    <p>{course.desc}</p>
+
+                    {/* ✅ Apply Button */}
+                    <Link to="/apply">
+                      <button className="apply-btn">Apply Now</button>
+                    </Link>
+                  </div>
+
                 </div>
-
-                <h5>{job.title}</h5>
-                <p>{job.desc}</p>
-
-                <div className="tags">
-                  <span>{job.type}</span>
-                  <span>{job.exp}</span>
-                  <span>{job.level}</span>
-                </div>
-
-                <div className="job-buttons">
-  <Link to="/apply">
-    <button className="apply-btn">Apply Now</button>
-  </Link>
-</div>
-
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
-
-        {/* Pagination Arrows */}
-        <div className="pagination-controls mt-5">
-
-  <button
-    className="arrow-btn"
-    disabled={currentPage === 1}
-    onClick={() => setCurrentPage(currentPage - 1)}
-  >
-    <FaChevronLeft />
-  </button>
-
-  <span className="page-text">
-    Page {currentPage} of {totalPages}
-  </span>
-
-  <button
-    className="arrow-btn"
-    disabled={currentPage === totalPages}
-    onClick={() => setCurrentPage(currentPage + 1)}
-  >
-    <FaChevronRight />
-  </button>
-
-</div>
 
       </div>
     </section>

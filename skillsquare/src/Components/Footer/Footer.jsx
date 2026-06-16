@@ -57,7 +57,7 @@ const Footer = () => {
           {/* Location */}
           <div className="footer-column">
             <h4>Our Location</h4>
-            <p><FaMapMarkerAlt className="footer-icon" /> Chennai, Tamil Nadu</p>
+            <p><FaMapMarkerAlt className="footer-icon" /> 4th floor,St.Xavior Building PWD Road, Nagercoil-629001</p>
             <p>
               <FaPhoneAlt className="footer-icon" />
               <a href="tel:+919876543210" className="phone-link">
