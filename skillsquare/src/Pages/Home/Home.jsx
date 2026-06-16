@@ -2,10 +2,11 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
-import heroImage from "../../assets/images/hero.jpeg"; // adjust path if needed
+import heroImage from "../../assets/images/hero.jpeg";
 import WhyChoose from "../WhyChoose/WhyChoose";
-import Courses from "../Courses/Courses";
 import Success from "../Success/Success";
+import About from "../About/About";
+
 function Home() {
   return (
     <>
@@ -61,7 +62,7 @@ function Home() {
     <Courses/>
     <Success/>
     </>
-  );  
+  );
 }
 
 export default Home;
