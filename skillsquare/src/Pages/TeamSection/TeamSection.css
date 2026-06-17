@@ -1,0 +1,341 @@
+/* ── Section ── */
+.team-section {
+  padding: 100px 20px;
+  background: linear-gradient(
+    135deg,
+    #e8f8f5 0%,
+    #f0faf8 30%,
+    #eaf6f9 60%,
+    #f5fdfc 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.team-section::before,
+.team-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.team-section::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(27,155,142,0.08) 0%, transparent 70%);
+  top: -180px;
+  left: -150px;
+}
+
+.team-section::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(38,199,181,0.07) 0%, transparent 70%);
+  bottom: -120px;
+  right: -100px;
+}
+
+/* ── Container ── */
+.team-container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scroll-in base states ── */
+.team-header,
+.team-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.team-header.visible,
+.team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:nth-child(2).visible {
+  transition-delay: 0.15s;
+}
+
+/* ── Header ── */
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-eyebrow {
+  background: rgba(27, 155, 142, 0.1);
+  color: #1b9b8e;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: popIn 0.5s ease both;
+}
+
+.team-title {
+  margin-top: 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #102a43;
+  font-weight: 700;
+}
+
+.team-title span {
+  color: #1b9b8e;
+  background: linear-gradient(135deg, #1b9b8e, #26c7b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Grid — 2 columns ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* ── Card ── */
+.team-card {
+  display: flex;
+  gap: 22px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(27, 155, 142, 0.08);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 48px rgba(27, 155, 142, 0.14);
+  border-color: rgba(27, 155, 142, 0.25);
+}
+
+/* ── Image ── */
+.team-image-section {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.team-image {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+  transition: transform 0.55s ease;
+  display: block;
+}
+
+.team-card:hover .team-image {
+  transform: scale(1.07);
+}
+
+/* ── Content ── */
+.team-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-top {
+  flex: unset;
+}
+
+/* ── Name with | bar ── */
+.team-name {
+  font-size: 1.25rem;
+  color: #102a43;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-name-bar {
+  color: #1b9b8e;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.team-designation {
+  color: #1b9b8e;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.team-location {
+  display: inline-block;
+  background: rgba(27, 155, 142, 0.1);
+  color: #1b9b8e;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Actions ── */
+.team-actions {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-btn {
+  border: none;
+  background: #1b9b8e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.team-btn:hover {
+  background: #158a7e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(27, 155, 142, 0.35);
+}
+
+.team-btn:active {
+  transform: scale(0.97);
+}
+
+.linkedin-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0077b5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.linkedin-btn:hover {
+  transform: scale(1.12) rotate(-5deg);
+  box-shadow: 0 6px 16px rgba(0, 119, 181, 0.35);
+}
+
+/* ── Bio ── */
+.team-bio {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #eef3f5;
+  color: #556575;
+  line-height: 1.8;
+  font-size: 13px;
+  animation: fadeDown 0.35s ease;
+}
+
+/* ── Chevron rotation ── */
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card {
+    flex-direction: column;
+  }
+
+  .team-image {
+    width: 100%;
+    height: 260px;
+  }
+
+  .team-title {
+    font-size: 1.8rem;
+  }
+
+  .team-section {
+    padding: 70px 16px;
+  }
+}
+
+.team-bio {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease,
+    margin-top 0.4s ease;
+
+  margin-top: 0;
+  color: #556575;
+  line-height: 1.8;
+}
+
+.team-card:hover .team-bio {
+  max-height: 500px;
+  opacity: 1;
+
+  margin-top: 20px;
+  padding-top: 20px;
+
+  border-top: 1px solid #ececec;
+}
+
+.team-btn {
+  background: #1b9b8e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.team-card {
+  transition: all 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+}
+
