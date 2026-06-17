@@ -59,7 +59,6 @@ function Home() {
       </div>
     </section>
     <WhyChoose/>
-    <Courses/>
     <Success/>
     </>
   );

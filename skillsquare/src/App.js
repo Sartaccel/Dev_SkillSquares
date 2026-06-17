@@ -14,8 +14,9 @@ import Contact from "./Pages/Contact/Contact";
 import Careers from "./Pages/Careers/Careers";
 import Testimonial from "./Pages/Testimonial/Testimonial";
 import ApplyNow from "./Pages/ApplyNow/ApplyNow";
-import EnrollmentForm from "./Pages/EnrollmentForm/EnrollmentForm";
+
 import ServicePopup from "./Components/ServicePopup/ServicePopup";
+import ACTAssessment from "./Pages/ACTAssessment/ACTAssessment";
 
 function App() {
   useEffect(() => {
@@ -37,7 +38,8 @@ function App() {
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/apply" element={<ApplyNow />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/enroll" element={<EnrollmentForm />} />
+        <Route path="/take-act" element={<ACTAssessment />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>

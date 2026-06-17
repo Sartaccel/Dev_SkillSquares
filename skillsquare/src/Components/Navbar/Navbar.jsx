@@ -68,22 +68,14 @@ const Navbar = () => {
 
           {/* Mobile Button */}
           <li className="mobile-btn">
-            <a
-              href="/contact"
-              className="enroll-btn"
-              onClick={handleNavigate}
-            >
-              Enroll Now
-            </a>
+            <a href="/take-act" className="enroll-btn" onClick={handleNavigate}>Take ACT</a>
           </li>
 
         </ul>
 
         {/* Desktop Button */}
         <div className="nav-btn">
-          <a href="/enroll" className="enroll-btn">
-            Enroll Now
-          </a>
+          <a href="/take-act" className="enroll-btn">Take ACT</a>
         </div>
 
         {/* Toggle */}
