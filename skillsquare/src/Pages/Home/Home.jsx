@@ -34,27 +34,27 @@ function Home() {
         <div className="hero-buttons">
 
  <Link
-  to="/courses"
+  to="/contact"
   className="btn primary-btn"
   onClick={() => window.scrollTo(0, 0)}
 >
   Schedule a Consultation
   <FaArrowRight className="arrow-icon" />
 </Link>
-<Link
-  to="/courses"
-  className="btn primary-btn"
-  onClick={() => window.scrollTo(0, 0)}
->
- Start Your Assessment
-  <FaArrowRight className="arrow-icon" />
-</Link>
+
 
   <Link to="/contact" className="btn primary-btn" onClick={() => window.scrollTo(0, 0)}>
     <FaPhoneAlt className="call-icon" />
     Explore Partnership Opportunities
   </Link>
-
+   <Link
+  to="/ACTAssessments"
+  className="btn primary-btn"
+  onClick={() => window.scrollTo(0, 0)}
+>
+ Start Your Free Assessment
+  <FaArrowRight className="arrow-icon" />
+</Link>
 </div>
       </div>
     </section>

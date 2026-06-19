@@ -54,11 +54,11 @@ const Navbar = () => {
             </a>
           </li>
 
-          <li>
+          {/* <li>
             <a href="/careers" onClick={handleNavigate}>
               Careers
             </a>
-          </li>
+          </li> */}
 
           <li>
             <a href="/contact" onClick={handleNavigate}>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
         {/* Desktop Button */}
         <div className="nav-btn">
-          <a href="/take-act" className="enroll-btn">Take ACT</a>
+          <a href="/ACTAssessments" className="enroll-btn">ACT NOW</a>
         </div>
 
         {/* Toggle */}

@@ -17,6 +17,7 @@ import ApplyNow from "./Pages/ApplyNow/ApplyNow";
 
 import ServicePopup from "./Components/ServicePopup/ServicePopup";
 import ACTAssessment from "./Pages/ACTAssessment/ACTAssessment";
+import Questions from "./Pages/ACTAssessments/ACTAssessments";
 
 function App() {
   useEffect(() => {
@@ -39,7 +40,7 @@ function App() {
         <Route path="/apply" element={<ApplyNow />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/take-act" element={<ACTAssessment />} />
-        
+        <Route path="/ACTAssessments" element={<Questions/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>

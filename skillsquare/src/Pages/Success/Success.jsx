@@ -46,13 +46,13 @@ const testimonials = [
   {
     name: "Hareeshwar",
     review:
-      "I attended Santhosh Sir's placement training session, and it was an excellent learning experience. His clear explanations, practical examples, and personalized feedback helped me improve my communication skills and confidence significantly.",
+      "An excellent placement training experience that combined clear explanations, practical examples, and constructive feedback. The session greatly enhanced communication skills, boosted confidence, and provided valuable insights for career and interview success.",
     image: Haree ,
   },
   {
     name: "Annamalai S",
     review:
-      "Mr. Santhosh's simple and effective teaching methodology made learning easy and significantly improved my communication skills. His training and continuous guidance played a key role in helping me secure my placement at HCL Technologies.",
+      "A simple yet highly effective teaching approach made learning engaging and easy to understand. Continuous training, mentorship, and guidance significantly strengthened communication skills and professional readiness, contributing greatly to securing a placement opportunity at HCL Technologies.",
     image: Santho,
   },
   {
@@ -70,13 +70,13 @@ const testimonials = [
   {
     name: "Dr Chidambara Vadivu V",
     review:
-      "Mr. Santosh conducted engaging and insightful sessions that provided practical strategies for stress management, work-life balance, and effective communication. His interactive approach and ability to connect with participants created a positive learning experience and left a lasting impact on our teachers.",
+      "An experienced Human Resources and Learning & Development leader specializing in talent management, workforce capability building, leadership development, employee engagement, and organizational transformation. Committed to empowering individuals and organizations through strategic learning initiatives, performance enhancement, and sustainable growth practices.",
     image: pri,
   },
   {
     name: "Correspondent Gurukulam High School",
     review:
-      "Mr. Santosh is an exceptional trainer whose Spoken English sessions greatly enhanced my communication skills. His Stress Buster sessions were equally refreshing and motivating, making learning both effective and enjoyable.",
+      "An exceptional trainer whose Spoken English sessions significantly enhanced communication skills and confidence. The Stress Buster sessions were equally engaging, refreshing, and motivating, creating an effective learning environment while making the overall experience enjoyable and impactful.",
     image: cros,
   },
 ];

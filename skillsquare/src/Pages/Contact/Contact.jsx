@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { FaArrowRight } from "react-icons/fa";
-
+import proposal from "../../assets/images/SkillSquare_Proposal.pdf";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -212,9 +212,19 @@ const [activeForm, setActiveForm] = useState(null);
                 <input type="tel" placeholder="Phone Number" />
                 <textarea placeholder="Workshop Requirement"></textarea>
 
-                <button type="submit" className="submit-btn">
-                  Submit Request
-                </button>
+                 <div className="proposal-actions">
+  <button type="submit" className="proposal-book-btn">
+    Book Session
+  </button>
+
+  <a
+    href={proposal}
+    download="SkillSquare_Proposal.pdf"
+    className="proposal-download-btn"
+  >
+    Download Proposal
+  </a>
+</div>
               </form>
             </>
           )}
@@ -230,9 +240,19 @@ const [activeForm, setActiveForm] = useState(null);
                 <input type="tel" placeholder="Phone Number" />
                 <textarea placeholder="Business Requirement"></textarea>
 
-                <button type="submit" className="submit-btn">
-                  Submit Request
-                </button>
+                 <div className="proposal-actions">
+  <button type="submit" className="proposal-book-btn">
+    Book Session
+  </button>
+
+  <a
+    href={proposal}
+    download="SkillSquare_Proposal.pdf"
+    className="proposal-download-btn"
+  >
+    Download Proposal
+  </a>
+</div>
               </form>
             </>
           )}
@@ -247,10 +267,20 @@ const [activeForm, setActiveForm] = useState(null);
                 <input type="tel" placeholder="Phone Number" />
                 <input type="text" placeholder="Degree / Course" />
                 <textarea placeholder="Career Goals"></textarea>
+                <div className="proposal-actions">
+  <button type="submit" className="proposal-book-btn">
+    Book Session
+  </button>
 
-                <button type="submit" className="submit-btn">
-                  Book Session
-                </button>
+  <a
+    href={proposal}
+    download="SkillSquare_Proposal.pdf"
+    className="proposal-download-btn"
+  >
+    Download Proposal
+  </a>
+</div>
+                
               </form>
             </>
           )}
