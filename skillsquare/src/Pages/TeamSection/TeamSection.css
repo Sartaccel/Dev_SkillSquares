@@ -339,3 +339,44 @@
   transform: translateY(-6px);
 }
 
+.profile-view-btn{
+   width: 32px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+}
+
+.linkedin-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.profile-view-btn {
+  background: #f1f5f9;
+  color: #185fc2;
+}
+
+.profile-view-btn:hover {
+  background: #0f172a;
+  color: #fff;
+}
+
+.linkedin-btn {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.linkedin-btn:hover {
+  background: #004182;
+}

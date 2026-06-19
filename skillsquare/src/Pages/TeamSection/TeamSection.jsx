@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./TeamSection.css";
-
+import { Eye } from "lucide-react";
 import san7 from "../../assets/images/p7.jpeg";
 import asir from "../../assets/images/image.png";
 
@@ -22,7 +22,7 @@ const team = [
   },
   {
     name: "Santhosh Kumar",
-    designation: "Chief Executive Officer",
+    designation: "Chief Learning Architect - Training & Operations",
     image: san7,
     linkedin: "https://www.linkedin.com/in/santhosh-kumar-m-52530a12a",
     bio: "Santhosh Kumar is a Human Resources and Learning & Development professional with extensive experience in talent management, leadership development, employee engagement, performance management, culture transformation, and workforce capability building.",
@@ -81,19 +81,26 @@ function AnimatedCard({ member }) {
         </div>
 
         <div className="team-actions">
-          <span className="team-btn">
-             View Profile
-          </span>
+  {/* <a
+    href={member.linkedin}
+    target="_blank"
+    rel="noreferrer"
+    className="profile-view-btn"
+    title="View Profile"
+  >
+    
+  </a> */}<Eye size={18} className="profile-view-btn"/>
 
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="linkedin-btn"
-          >
-            <LinkedinIcon />
-          </a>
-        </div>
+  <a
+    href={member.linkedin}
+    target="_blank"
+    rel="noreferrer"
+    className="linkedin-btn"
+    title="LinkedIn Profile"
+  >
+    <LinkedinIcon size={18} />
+  </a>
+</div>
 
         <div className="team-bio">
           {member.bio}

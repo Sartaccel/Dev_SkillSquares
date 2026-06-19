@@ -464,3 +464,167 @@ textarea:focus {
     transform: translateY(0) scale(1);
   }
 }
+
+
+
+
+.download-btn {
+  display: inline-block;
+  
+  padding: 12px 24px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.download-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.buttonn-row {
+  display: flex;
+  background-color: red;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Mobile responsive */
+}
+/* Action Buttons Container */
+.proposal-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* Book Session Button */
+.proposal-book-btn {
+  width: 220px;
+  height: 52px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #1b9b8e, #0f766e);
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.proposal-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 155, 142, 0.3);
+}
+
+/* Download Button */
+.proposal-download-btn {
+  width: 220px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.proposal-download-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .proposal-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .proposal-book-btn,
+  .proposal-download-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+.proposal-actions {
+  grid-column: 1 / -1; /* span both columns */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.proposal-book-btn,
+.proposal-download-btn {
+  width: 220px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.proposal-book-btn {
+  background: #1b9b8e;
+  color: white;
+}
+
+.proposal-download-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.proposal-book-btn:hover,
+.proposal-download-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .proposal-actions {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+
+  .proposal-book-btn,
+  .proposal-download-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
