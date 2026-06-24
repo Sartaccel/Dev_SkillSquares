@@ -42,13 +42,13 @@ input,select{font-family:inherit;font-size:1rem}
   display:grid;
   grid-template-columns:1.15fr .85fr;
   gap:54px;
-  align-items:center;
+  align-items:start;
   padding:10px 0;}
-.act-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:7px 12px;border:1px solid var(--line2);border-radius:100px;background:var(--card)}
+.act-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#1b9b8e;padding:7px 12px;border:1px solid var(--line2);border-radius:100px;background:var(--card)}
 .act-dot{width:7px;height:7px;border-radius:50%;background:var(--tech);box-shadow:0 0 0 4px var(--tech-soft)}
 .act-lockup{font-family:var(--disp);font-weight:800;letter-spacing:-.04em;line-height:.86;font-size:clamp(72px,13vw,148px);margin:20px 0 6px}
-.act-lockup .now{color:var(--tech)}
-.act-hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(22px,3.3vw,33px);letter-spacing:-.02em;margin:4px 0 14px;max-width:18ch}
+.act-lockup .now{color:#1b9b8e}
+.act-hero h1{font-weight:600;color:#1b9b8e;font-size:clamp(22px,3.3vw,33px);letter-spacing:-.02em;margin:4px 0 14px;max-width:18ch}
 .act-hero p.lead{font-size:1.06rem;color:#403c4b;max-width:46ch;margin:0 0 26px}
 .act-triad{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
 .act-triad span{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem}
