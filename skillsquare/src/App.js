@@ -17,7 +17,10 @@ import ApplyNow from "./Pages/ApplyNow/ApplyNow";
 
 import ServicePopup from "./Components/ServicePopup/ServicePopup";
 import ACTAssessment from "./Pages/ACTAssessment/ACTAssessment";
-import Questions from "./Pages/ACTAssessments/ACTAssessments";
+
+import RegisterPage from "./Pages/ACTAssessments/pages/RegisterPage";
+import TestPage     from "./Pages/ACTAssessments/pages/TestPage";
+import ResultPage   from "./Pages/ACTAssessments/pages/ResultPage";
 
 function App() {
   useEffect(() => {
@@ -33,14 +36,18 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/"            element={<Home />} />
+        <Route path="/about"       element={<About />} />
+        <Route path="/careers"     element={<Careers />} />
         <Route path="/testimonial" element={<Testimonial />} />
-        <Route path="/apply" element={<ApplyNow />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/take-act" element={<ACTAssessment />} />
-        <Route path="/ACTAssessments" element={<Questions/>}/>
+        <Route path="/apply"       element={<ApplyNow />} />
+        <Route path="/contact"     element={<Contact />} />
+        <Route path="/take-act"    element={<ACTAssessment />} />
+
+        {/* ACT Assessment — 3 pages */}
+        <Route path="/ACTAssessments"        element={<RegisterPage />} />
+        <Route path="/ACTAssessments/test"   element={<TestPage />} />
+        <Route path="/ACTAssessments/result" element={<ResultPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
