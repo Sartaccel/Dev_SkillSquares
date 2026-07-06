@@ -15,6 +15,7 @@ export default function RegisterPage() {
     department: "",
   });
   const [errors, setErrors] = useState({});
+  const [checking, setChecking] = useState(false);
 
   const depts = form.studies ? deptsFor(form.studies) : [];
 
@@ -34,6 +35,28 @@ export default function RegisterPage() {
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
+    setChecking(true);
+
+    // Check how many times this email has already taken the test
+    try {
+      const { data } = await api.get("/assessment/attempts", {
+        params: { email: form.email.trim() },
+      });
+      const attemptsUsed = data?.attemptsUsed ?? 0;
+      if (attemptsUsed >= 2) {
+        alert(
+          "You've already used both of your attempts for this test with this email address."
+        );
+        setChecking(false);
+        return;
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Couldn't verify your attempt count. Please try again.");
+      setChecking(false);
+      return;
+    }
+
     try {
       await api.post("/candidates", {
         fullName:     form.fullName,
@@ -50,11 +73,14 @@ export default function RegisterPage() {
       Session.save("quiz",      quiz);
       Session.save("secRanges", secRanges);
       Session.save("startTime", Date.now());
+      Session.save("scoreSubmitted", false);
 
       navigate("/ACTAssessments/test");
     } catch (error) {
       console.error(error);
       alert("Failed to save candidate details");
+    } finally {
+      setChecking(false);
     }
   };
 
@@ -154,8 +180,8 @@ export default function RegisterPage() {
             <div className="hint">Please select your department.</div>
           </div>
 
-          <button className="act-startbtn" onClick={handleStart}>
-            Start the assessment <span className="arr">→</span>
+          <button className="act-startbtn" onClick={handleStart} disabled={checking}>
+            {checking ? "Checking…" : "Start the assessment"} <span className="arr">→</span>
           </button>
         </div>
       </div>

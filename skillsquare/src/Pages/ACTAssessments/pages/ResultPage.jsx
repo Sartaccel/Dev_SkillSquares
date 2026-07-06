@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { SECTIONS, KEYS, Session } from "../questions";
 import "../Questions.css";
+import api from "../../../api";
 
 export default function ResultPage() {
   const navigate = useNavigate();
@@ -13,39 +14,40 @@ export default function ResultPage() {
 
   const [reviewOpen, setReviewOpen] = useState(false);
   const [filter,     setFilter]     = useState("all");
+  const [submitted,  setSubmitted]  = useState(false);
   const ringRef = useRef(null);
   const barsRef = useRef([]);
 
   // Redirect if no result data
   useEffect(() => {
-  if (!quiz || !answers || !student) {
-    navigate("/ACTAssessments", { replace: true });
-  }
-}, [quiz, answers, student, navigate]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  
+    if (!quiz || !answers || !student) {
+      navigate("/ACTAssessments", { replace: true });
+    }
+  }, [quiz, answers, student, navigate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Score calculation ──────────────────────────────────────────────────────
   const elapsed = 3600 - timeLeft;
   let total = 0;
   const secStats = {};
-  SECTIONS.forEach((s) => {
-    secStats[s.id] = { correct: 0, total: 0, name: s.name, color: s.color, cats: {} };
-  });
+  if (quiz) {
+    SECTIONS.forEach((s) => {
+      secStats[s.id] = { correct: 0, total: 0, name: s.name, color: s.color, cats: {} };
+    });
 
-  quiz.forEach((q, i) => {
-    const ss = secStats[q.sectionId];
-    ss.total++;
-    if (!ss.cats[q.category]) ss.cats[q.category] = { c: 0, t: 0 };
-    ss.cats[q.category].t++;
-    if (answers[i] === q.answer) {
-      total++;
-      ss.correct++;
-      ss.cats[q.category].c++;
-    }
-  });
+    quiz.forEach((q, i) => {
+      const ss = secStats[q.sectionId];
+      ss.total++;
+      if (!ss.cats[q.category]) ss.cats[q.category] = { c: 0, t: 0 };
+      ss.cats[q.category].t++;
+      if (answers[i] === q.answer) {
+        total++;
+        ss.correct++;
+        ss.cats[q.category].c++;
+      }
+    });
+  }
 
-  const pct       = Math.round((total / quiz.length) * 100);
+  const pct       = quiz ? Math.round((total / quiz.length) * 100) : 0;
   const ringColor = pct >= 75 ? "#159B5C" : pct >= 50 ? "#E8821E" : pct >= 35 ? "#2F5BEA" : "#D8462F";
   const circ      = 2 * Math.PI * 82;
 
@@ -64,6 +66,36 @@ export default function ResultPage() {
     }, 150);
     return () => clearTimeout(t);
   }, [reviewOpen]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Submit scores to backend once ──────────────────────────────────────────
+  useEffect(() => {
+    if (!quiz || !answers || !student || submitted) return;
+
+    const alreadySubmitted = Session.load("scoreSubmitted");
+    if (alreadySubmitted) {
+      setSubmitted(true);
+      return;
+    }
+
+    const payload = {
+      email: student.email,
+      aptitudeScore: secStats["aptitude"]?.correct ?? 0,
+      communicationScore: secStats["communication"]?.correct ?? 0,
+      technicalScore: secStats["technical"]?.correct ?? 0,
+      timeTakenSeconds: elapsed,
+    };
+
+    api
+      .post("/assessment/submit", payload)
+      .then(() => {
+        Session.save("scoreSubmitted", true);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error("Failed to submit assessment result:", error);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quiz, answers, student]);
 
   const handleDownload = () => {
     const lines = [
@@ -100,14 +132,16 @@ export default function ResultPage() {
     navigate("/ACTAssessments");
   };
 
+  if (!quiz || !answers || !student) {
+    return null;
+  }
+
   const filteredIdxs = quiz.map((_, i) => i).filter((i) => {
     if (filter === "wrong")   return answers[i] !== quiz[i].answer;
     if (filter === "skipped") return answers[i] === null;
     return true;
   });
-if (!quiz || !answers || !student) {
-  return null;
-}
+
   barsRef.current = [];
 
   return (
@@ -194,6 +228,12 @@ if (!quiz || !answers || !student) {
           <button className="act-ra" onClick={() => window.print()}>Print</button>
           <button className="act-ra" onClick={handleRetake}>Take another test</button>
         </div>
+
+        {!submitted && (
+          <p style={{ textAlign: "center", color: "var(--muted)", fontSize: ".85rem", marginTop: 8 }}>
+            Saving your result…
+          </p>
+        )}
 
         {/* ── Answer review ── */}
         {reviewOpen && (
