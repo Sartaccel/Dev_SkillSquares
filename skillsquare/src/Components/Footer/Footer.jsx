@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaMapMarkerAlt,
+  FaEnvelope ,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -37,7 +38,7 @@ const Footer = () => {
               <h3>SkillSquare</h3>
             </div>
             <p className="footer-description">
-              We provide industry-level training in Web Development,
+              We provide industry-level training in Web Development, 
               Data Analytics, and Software Technologies.
               Learn. Build. Grow.
             </p>
@@ -48,8 +49,8 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/#courses">Courses</a></li>
-              <li><a href="/#whychoose">About Us</a></li>
+              <li><a href="/Course  ">Courses</a></li>
+              <li><a href="/about">About Us</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
@@ -62,6 +63,12 @@ const Footer = () => {
               <FaPhoneAlt className="footer-icon" />
               <a href="tel:+919876543210" className="phone-link">
                 +91 98765 43210
+              </a>
+            </p>
+            <p>
+              <FaEnvelope  className="footer-icon" />
+              <a href="tel:+919876543210" className="phone-link">
+              contact@skillsquare.ai
               </a>
             </p>
           </div>

@@ -15,7 +15,7 @@ import Saran from "../../assets/images/p2.jpeg"
 import San from "../../assets/images/p3.jpeg"
 import pri from "../../assets/images/p4.jpeg"
 import cros from "../../assets/images/p5.jpeg"
-import TeamSection from "../TeamSection/TeamSection";
+// import TeamSection from "../TeamSection/TeamSection";
 // import ResourceCenter from "../ResourceCenter/ResourceCenter";
 // import InvestorPartnerPage from "../InvestorPartnerPage/InvestorPartnerPage";
 const testimonials = [
@@ -43,42 +43,42 @@ const testimonials = [
       "I am grateful to SART Accelerator for guiding me to join the Java Full Stack Developer course. Working on real-time projects boosted my confidence to become a successful developer.",
     image: Lijona,
   },
-  {
-    name: "Hareeshwar",
-    review:
-      "An excellent placement training experience that combined clear explanations, practical examples, and constructive feedback. The session greatly enhanced communication skills, boosted confidence, and provided valuable insights for career and interview success.",
-    image: Haree ,
-  },
-  {
-    name: "Annamalai S",
-    review:
-      "A simple yet highly effective teaching approach made learning engaging and easy to understand. Continuous training, mentorship, and guidance significantly strengthened communication skills and professional readiness, contributing greatly to securing a placement opportunity at HCL Technologies.",
-    image: Santho,
-  },
-  {
-    name: "Saran",
-    review:
-      "The training sessions were highly engaging, interactive, and insightful. The practical knowledge and guidance provided helped us apply key concepts effectively during our interviews.",
-    image: Saran,
-  },
-  {
-    name: "Shyam",
-    review:
-      "The training sessions were highly engaging and insightful, providing practical knowledge that helped us perform confidently during our interviews. The guidance, encouragement, and continuous support significantly improved my communication skills and overall confidence.",
-    image: San,
-  },
-  {
-    name: "Dr Chidambara Vadivu V",
-    review:
-      "An experienced Human Resources and Learning & Development leader specializing in talent management, workforce capability building, leadership development, employee engagement, and organizational transformation. Committed to empowering individuals and organizations through strategic learning initiatives, performance enhancement, and sustainable growth practices.",
-    image: pri,
-  },
-  {
-    name: "Correspondent Gurukulam High School",
-    review:
-      "An exceptional trainer whose Spoken English sessions significantly enhanced communication skills and confidence. The Stress Buster sessions were equally engaging, refreshing, and motivating, creating an effective learning environment while making the overall experience enjoyable and impactful.",
-    image: cros,
-  },
+  // {
+  //   name: "Hareeshwar",
+  //   review:
+  //     "An excellent placement training experience that combined clear explanations, practical examples, and constructive feedback. The session greatly enhanced communication skills, boosted confidence, and provided valuable insights for career and interview success.",
+  //   image: Haree ,
+  // },
+  // {
+  //   name: "Annamalai S",
+  //   review:
+  //     "A simple yet highly effective teaching approach made learning engaging and easy to understand. Continuous training, mentorship, and guidance significantly strengthened communication skills and professional readiness, contributing greatly to securing a placement opportunity at HCL Technologies.",
+  //   image: Santho,
+  // },
+  // {
+  //   name: "Saran",
+  //   review:
+  //     "The training sessions were highly engaging, interactive, and insightful. The practical knowledge and guidance provided helped us apply key concepts effectively during our interviews.",
+  //   image: Saran,
+  // },
+  // {
+  //   name: "Shyam",
+  //   review:
+  //     "The training sessions were highly engaging and insightful, providing practical knowledge that helped us perform confidently during our interviews. The guidance, encouragement, and continuous support significantly improved my communication skills and overall confidence.",
+  //   image: San,
+  // },
+  // {
+  //   name: "Dr Chidambara Vadivu V",
+  //   review:
+  //     "An experienced Human Resources and Learning & Development leader specializing in talent management, workforce capability building, leadership development, employee engagement, and organizational transformation. Committed to empowering individuals and organizations through strategic learning initiatives, performance enhancement, and sustainable growth practices.",
+  //   image: pri,
+  // },
+  // {
+  //   name: "Correspondent Gurukulam High School",
+  //   review:
+  //     "An exceptional trainer whose Spoken English sessions significantly enhanced communication skills and confidence. The Stress Buster sessions were equally engaging, refreshing, and motivating, creating an effective learning environment while making the overall experience enjoyable and impactful.",
+  //   image: cros,
+  // },
 ];
 
 // Split array into groups of 3
@@ -167,7 +167,7 @@ const settings = {
       </div>
       {/* <ResourceCenter/>
       <InvestorPartnerPage/> */}
-      <TeamSection/>
+      {/* <TeamSection/> */}
     </section>
   );
 }

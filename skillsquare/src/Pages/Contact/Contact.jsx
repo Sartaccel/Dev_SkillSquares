@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Contact.css";
 import { FaArrowRight } from "react-icons/fa";
 import proposal from "../../assets/images/SkillSquare_Proposal.pdf";
-import api from "../../api"; // your axios instance
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [activeForm, setActiveForm] = useState(null);
@@ -10,16 +10,12 @@ function Contact() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const [collegeData, setCollegeData] = useState({
-    collegeName: "", contactPerson: "", email: "", phone: "", workshopRequirement: "",
-  });
-
-  const [corporateData, setCorporateData] = useState({
-    companyName: "", contactPerson: "", email: "", phone: "", businessRequirement: "",
-  });
-
   const [studentData, setStudentData] = useState({
-    studentName: "", email: "", phone: "", degreeCourse: "", careerGoals: "",
+    studentName: "",
+    email: "",
+    phone: "",
+    degreeCourse: "",
+    careerGoals: "",
   });
 
   const resetAll = () => {
@@ -40,45 +36,6 @@ function Contact() {
     }, 2500);
   };
 
-  // ── College ──────────────────────────────────────────────
-  const handleCollegeChange = (e) =>
-    setCollegeData({ ...collegeData, [e.target.name]: e.target.value });
-
-  const handleCollegeSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    try {
-      await api.post("/enquiry/college", collegeData);
-      setCollegeData({ collegeName: "", contactPerson: "", email: "", phone: "", workshopRequirement: "" });
-      handleSuccess();
-    } catch (err) {
-      setError("Submission failed. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // ── Corporate ────────────────────────────────────────────
-  const handleCorporateChange = (e) =>
-    setCorporateData({ ...corporateData, [e.target.name]: e.target.value });
-
-  const handleCorporateSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    try {
-      await api.post("/enquiry/corporate", corporateData);
-      setCorporateData({ companyName: "", contactPerson: "", email: "", phone: "", businessRequirement: "" });
-      handleSuccess();
-    } catch (err) {
-      setError("Submission failed. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // ── Student ──────────────────────────────────────────────
   const handleStudentChange = (e) =>
     setStudentData({ ...studentData, [e.target.name]: e.target.value });
 
@@ -86,12 +43,36 @@ function Contact() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
     try {
-      await api.post("/enquiry/student", studentData);
-      setStudentData({ studentName: "", email: "", phone: "", degreeCourse: "", careerGoals: "" });
+      await emailjs.send(
+        "service_ib1e8ng",
+        "template_cc0sud9",
+        {
+          studentName: studentData.studentName,
+          email: studentData.email,
+          phone: studentData.phone,
+          degreeCourse: studentData.degreeCourse,
+          careerGoals: studentData.careerGoals,
+        },
+        "0GwVRlinyAWLyGCA3"
+      );
+
+      setStudentData({
+        studentName: "",
+        email: "",
+        phone: "",
+        degreeCourse: "",
+        careerGoals: "",
+      });
+
       handleSuccess();
     } catch (err) {
-      setError("Submission failed. Please try again.");
+      console.error(err);
+      console.log("EmailJS Error:", err);
+  console.log("Status:", err.status);
+  console.log("Text:", err.text);
+      setError("Failed to send enquiry. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -129,13 +110,13 @@ function Contact() {
 
       <section className="inquiry-section">
         <div className="button-row">
-          <button className="btn primary-btn" onClick={() => { resetAll(); setActiveForm("college"); }}>
-            For Colleges <FaArrowRight className="arrow-icon" />
-          </button>
-          <button className="btn primary-btn" onClick={() => { resetAll(); setActiveForm("corporate"); }}>
-            For Corporates <FaArrowRight className="arrow-icon" />
-          </button>
-          <button className="btn primary-btn" onClick={() => { resetAll(); setActiveForm("student"); }}>
+          <button
+            className="btn primary-btn"
+            onClick={() => {
+              resetAll();
+              setActiveForm("student");
+            }}
+          >
             For Students <FaArrowRight className="arrow-icon" />
           </button>
         </div>
@@ -143,131 +124,102 @@ function Contact() {
         {activeForm && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="form-container" onClick={(e) => e.stopPropagation()}>
-              <button className="close-btn" onClick={closeModal}>✕</button>
+              <button className="close-btn" onClick={closeModal}>
+                &#10005;
+              </button>
 
-              {/* ── Success banner ── */}
               {success && (
                 <div className="success-message">
-                  ✅ Submitted successfully! We'll get back to you soon.
+                  Submitted successfully! We'll get back to you soon.
                 </div>
               )}
 
-              {/* ── Error banner ── */}
-              {error && (
-                <div className="error-message">{error}</div>
-              )}
+              {error && <div className="error-message">{error}</div>}
 
-              {/* ── College form ── */}
-              {activeForm === "college" && !success && (
-                <>
-                  <h2>Book Workshop</h2>
-                  <form className="form-grid" onSubmit={handleCollegeSubmit}>
-                    <input
-                      type="text" name="collegeName" placeholder="College Name"
-                      value={collegeData.collegeName} onChange={handleCollegeChange} required
-                    />
-                    <input
-                      type="text" name="contactPerson" placeholder="Contact Person"
-                      value={collegeData.contactPerson} onChange={handleCollegeChange} required
-                    />
-                    <input
-                      type="email" name="email" placeholder="Email Address"
-                      value={collegeData.email} onChange={handleCollegeChange} required
-                    />
-                    <input
-                      type="tel" name="phone" placeholder="Phone Number"
-                      value={collegeData.phone} onChange={handleCollegeChange} required
-                    />
-                    <textarea
-                      name="workshopRequirement" placeholder="Workshop Requirement"
-                      value={collegeData.workshopRequirement} onChange={handleCollegeChange} required
-                    />
-                    <div className="proposal-actions">
-                      <button type="submit" className="proposal-book-btn" disabled={loading}>
-                        {loading ? "Submitting..." : "Book Session"}
-                      </button>
-                      <a href={proposal} download="SkillSquare_Proposal.pdf" className="proposal-download-btn">
-                        Download Proposal
-                      </a>
-                    </div>
-                  </form>
-                </>
-              )}
-
-              {/* ── Corporate form ── */}
-              {activeForm === "corporate" && !success && (
-                <>
-                  <h2>Request Proposal</h2>
-                  <form className="form-grid" onSubmit={handleCorporateSubmit}>
-                    <input
-                      type="text" name="companyName" placeholder="Company Name"
-                      value={corporateData.companyName} onChange={handleCorporateChange} required
-                    />
-                    <input
-                      type="text" name="contactPerson" placeholder="Contact Person"
-                      value={corporateData.contactPerson} onChange={handleCorporateChange} required
-                    />
-                    <input
-                      type="email" name="email" placeholder="Email Address"
-                      value={corporateData.email} onChange={handleCorporateChange} required
-                    />
-                    <input
-                      type="tel" name="phone" placeholder="Phone Number"
-                      value={corporateData.phone} onChange={handleCorporateChange} required
-                    />
-                    <textarea
-                      name="businessRequirement" placeholder="Business Requirement"
-                      value={corporateData.businessRequirement} onChange={handleCorporateChange} required
-                    />
-                    <div className="proposal-actions">
-                      <button type="submit" className="proposal-book-btn" disabled={loading}>
-                        {loading ? "Submitting..." : "Book Session"}
-                      </button>
-                      <a href={proposal} download="SkillSquare_Proposal.pdf" className="proposal-download-btn">
-                        Download Proposal
-                      </a>
-                    </div>
-                  </form>
-                </>
-              )}
-
-              {/* ── Student form ── */}
               {activeForm === "student" && !success && (
                 <>
                   <h2>Career Counselling</h2>
                   <form className="form-grid" onSubmit={handleStudentSubmit}>
                     <input
-                      type="text" name="studentName" placeholder="Student Name"
-                      value={studentData.studentName} onChange={handleStudentChange} required
+                      type="text"
+                      name="studentName"
+                      placeholder="Student Name"
+                      value={studentData.studentName}
+                      onChange={handleStudentChange}
+                      required
                     />
                     <input
-                      type="email" name="email" placeholder="Email Address"
-                      value={studentData.email} onChange={handleStudentChange} required
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={studentData.email}
+                      onChange={handleStudentChange}
+                      required
                     />
                     <input
-                      type="tel" name="phone" placeholder="Phone Number"
-                      value={studentData.phone} onChange={handleStudentChange} required
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={studentData.phone}
+                      onChange={handleStudentChange}
+                      required
                     />
-                    <input
-                      type="text" name="degreeCourse" placeholder="Degree / Course"
-                      value={studentData.degreeCourse} onChange={handleStudentChange} required
-                    />
+                    <select
+                      name="degreeCourse"
+                      value={studentData.degreeCourse}
+                      onChange={handleStudentChange}
+                      required
+                    >
+                      <option value="">Select Course</option>
+                      <option value="Workplace Readiness & Employability Skills">
+                        Workplace Readiness & Employability Skills
+                      </option>
+                      <option value="Tourism & Travel Operations">
+                        Tourism & Travel Operations
+                      </option>
+                      <option value="Hospitality & Guest Experience">
+                        Hospitality & Guest Experience
+                      </option>
+                      <option value="Home Care & Assisted Living">
+                        Home Care & Assisted Living
+                      </option>
+                      <option value="Digital Skills For Modern Jobs">
+                        Digital Skills For Modern Jobs
+                      </option>
+                      <option value="Sales & Marketing Strategies">
+                        Sales & Marketing Strategies
+                      </option>
+                      <option value="Customer Support & CRM">
+                        Customer Support & CRM
+                      </option>
+                      <option value="Entrepreneurship & Startup">
+                        Entrepreneurship & Startup
+                      </option>
+                      <option value="Customer Branding">Customer Branding</option>
+                      <option value="Personal Branding">Personal Branding</option>
+                    </select>
                     <textarea
-                      name="careerGoals" placeholder="Career Goals"
-                      value={studentData.careerGoals} onChange={handleStudentChange} required
+                      name="careerGoals"
+                      placeholder="Career Goals"
+                      value={studentData.careerGoals}
+                      onChange={handleStudentChange}
+                      required
                     />
                     <div className="proposal-actions">
                       <button type="submit" className="proposal-book-btn" disabled={loading}>
                         {loading ? "Submitting..." : "Book Session"}
                       </button>
-                      <a href={proposal} download="SkillSquare_Proposal.pdf" className="proposal-download-btn">
+                      <a
+                        href={proposal}
+                        download="SkillSquare_Proposal.pdf"
+                        className="proposal-download-btn"
+                      >
                         Download Proposal
                       </a>
                     </div>
                   </form>
                 </>
               )}
-
             </div>
           </div>
         )}

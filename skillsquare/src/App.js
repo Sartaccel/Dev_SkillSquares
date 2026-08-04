@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,10 +19,13 @@ import ServicePopup from "./Components/ServicePopup/ServicePopup";
 import ACTAssessment from "./Pages/ACTAssessment/ACTAssessment";
 
 import RegisterPage from "./Pages/ACTAssessments/pages/RegisterPage";
-import TestPage     from "./Pages/ACTAssessments/pages/TestPage";
-import ResultPage   from "./Pages/ACTAssessments/pages/ResultPage";
+import TestPage from "./Pages/ACTAssessments/pages/TestPage";
+import ResultPage from "./Pages/ACTAssessments/pages/ResultPage";
+import Course from "./Pages/Course/Course";
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -32,23 +35,30 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ServicePopup />
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/"            element={<Home />} />
-        <Route path="/about"       element={<About />} />
-        <Route path="/careers"     element={<Careers />} />
-        <Route path="/testimonial" element={<Testimonial />} />
-        <Route path="/apply"       element={<ApplyNow />} />
-        <Route path="/contact"     element={<Contact />} />
-        <Route path="/take-act"    element={<ACTAssessment />} />
+      <ServicePopup
+        svcShowForm={showPopup}
+        setSvcShowForm={setShowPopup}
+      />
 
-        {/* ACT Assessment — 3 pages */}
-        <Route path="/ACTAssessments"        element={<RegisterPage />} />
-        <Route path="/ACTAssessments/test"   element={<TestPage />} />
+      <ScrollToTop />
+
+      <Navbar setSvcShowForm={setShowPopup} />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/apply" element={<ApplyNow />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/take-act" element={<ACTAssessment />} />
+        <Route path="/Course" element={<Course />} />
+
+        <Route path="/ACTAssessments" element={<RegisterPage />} />
+        <Route path="/ACTAssessments/test" element={<TestPage />} />
         <Route path="/ACTAssessments/result" element={<ResultPage />} />
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );
