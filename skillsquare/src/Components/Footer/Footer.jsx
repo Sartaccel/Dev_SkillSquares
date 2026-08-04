@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaMapMarkerAlt,
+  FaEnvelope ,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -62,6 +63,12 @@ const Footer = () => {
               <FaPhoneAlt className="footer-icon" />
               <a href="tel:+919876543210" className="phone-link">
                 +91 98765 43210
+              </a>
+            </p>
+            <p>
+              <FaEnvelope  className="footer-icon" />
+              <a href="tel:+919876543210" className="phone-link">
+              contact@skillsquare.ai
               </a>
             </p>
           </div>
