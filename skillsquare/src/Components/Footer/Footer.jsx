@@ -37,7 +37,7 @@ const Footer = () => {
               <h3>SkillSquare</h3>
             </div>
             <p className="footer-description">
-              We provide industry-level training in Web Development,
+              We provide industry-level training in Web Development, 
               Data Analytics, and Software Technologies.
               Learn. Build. Grow.
             </p>
@@ -48,8 +48,8 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/#courses">Courses</a></li>
-              <li><a href="/#whychoose">About Us</a></li>
+              <li><a href="/Course  ">Courses</a></li>
+              <li><a href="/about">About Us</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>

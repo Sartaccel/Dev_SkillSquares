@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./ServicePopup.css";
 import { FaTimes } from "react-icons/fa";
 
-const ServicePopup = () => {
-  const [svcShowForm, setSvcShowForm] = useState(false);
+const ServicePopup = ({ svcShowForm, setSvcShowForm }) => {
+  
   const [svcSubmitted, setSvcSubmitted] = useState(false);
 
   const [svcFormData, setSvcFormData] = useState({
@@ -14,14 +14,14 @@ const ServicePopup = () => {
   });
 
   // ✅ Show FORM only on page refresh
-  useEffect(() => {
-    const navigationType =
-      performance.getEntriesByType("navigation")[0]?.type;
+useEffect(() => {
+  const navigationType =
+    performance.getEntriesByType("navigation")[0]?.type;
 
-    if (navigationType === "reload") {
-      setSvcShowForm(true);
-    }
-  }, []);
+  if (navigationType === "reload") {
+    setSvcShowForm(true);
+  }
+}, []);
 
   const handleSvcChange = (e) => {
     setSvcFormData({ ...svcFormData, [e.target.name]: e.target.value });
