@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from "./Components/Navbar/Navbar";
@@ -15,7 +15,7 @@ import Careers from "./Pages/Careers/Careers";
 import Testimonial from "./Pages/Testimonial/Testimonial";
 import ApplyNow from "./Pages/ApplyNow/ApplyNow";
 
-import ServicePopup from "./Components/ServicePopup/ServicePopup";
+// import ServicePopup from "./Components/ServicePopup/ServicePopup";
 import ACTAssessment from "./Pages/ACTAssessment/ACTAssessment";
 
 import RegisterPage from "./Pages/ACTAssessments/pages/RegisterPage";
@@ -24,25 +24,26 @@ import ResultPage from "./Pages/ACTAssessments/pages/ResultPage";
 import Course from "./Pages/Course/Course";
 
 function App() {
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000,
+  //     once: true,
+  //   });
+  // }, []);
 
   return (
     <BrowserRouter>
-      <ServicePopup
+      {/* <ServicePopup
         svcShowForm={showPopup}
         setSvcShowForm={setShowPopup}
-      />
+      /> */}
 
       <ScrollToTop />
 
-      <Navbar setSvcShowForm={setShowPopup} />
+      {/* <Navbar setSvcShowForm={setShowPopup} /> */}
+      <Navbar  />
 
       <Routes>
         <Route path="/" element={<Home />} />

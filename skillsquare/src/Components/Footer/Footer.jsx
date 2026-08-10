@@ -67,9 +67,9 @@ const Footer = () => {
             </p>
             <p>
               <FaEnvelope  className="footer-icon" />
-              <a href="tel:+919876543210" className="phone-link">
-              contact@skillsquare.ai
-              </a>
+              <a href="mailto:contact@skillsquare.ai" className="phone-link">
+  contact@skillsquare.ai
+</a>
             </p>
           </div>
 
@@ -86,16 +86,42 @@ const Footer = () => {
         {/* Floating Social Blob */}
         <div className="footer-social-wrapper">
           <div className="footer-social-blob">
-            <a href="#" className="social-icon"><FaWhatsapp /></a>
-            <a href="#" className="social-icon"><FaLinkedinIn /></a>
-            <a href="#" className="social-icon"><FaInstagram /></a>
+            <a
+  href="https://wa.me/919876543210"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <FaWhatsapp />
+</a>
+            <a
+  href="https://www.linkedin.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <FaLinkedinIn />
+</a>
+            <a
+  href="https://www.instagram.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <FaInstagram />
+</a>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="footer-bottom">
   © {new Date().getFullYear()}{" "}
-  <a href="https://www.enterkeysolutions.com" target="_blank" className="footer-company">
+  <a
+  href="https://www.enterkeysolutions.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="footer-company"
+>
     Enterkey Solution
   </a>{" "}
   | All Rights Reserved.

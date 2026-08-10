@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect } from "react";
 import {
   FaChalkboardTeacher,
   FaBookOpen,
@@ -45,59 +45,7 @@ const features = [
  
 ];
 
-function Counter({ end, label }) {
-  const [count, setCount] = useState(0);
-  const counterRef = useRef(null);
-  const hasAnimated = useRef(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          startCounter();
-        } else {
-          setCount(0); // Reset when leaving view
-          hasAnimated.current = false;
-        }
-      },
-      { threshold: 0.6 }
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const startCounter = () => {
-    if (hasAnimated.current) return;
-
-    hasAnimated.current = true;
-
-    let start = 0;
-    const duration = 2000;
-    const increment = end / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-
-      if (start >= end) {
-        start = end;
-        clearInterval(timer);
-      }
-
-      setCount(Math.floor(start));
-    }, 16);
-  };
-
-  return (
-    <div className="col-md-3 text-center counter-box" ref={counterRef}>
-      <h2 className="fw-bold ">{count}+</h2>
-      <p>{label}</p>
-    </div>
-  );
-}
 const steps = [
   {
     // step: "Step 1",
@@ -239,32 +187,22 @@ function WhyChoose() {
           />
         </svg>
 
-        {steps.map((item, index) => (
-          <div
-            key={index}
-            className={`step-card ${item.position}`}
-          >
-            {/* <div className="dot"></div> */}
+      {steps.map((item, index) => (
+  <React.Fragment key={index}>
+    <div className={`step-card ${item.position}`}>
+      <h3>{item.title}</h3>
+      <p>{item.desc}</p>
+    </div>
 
-            <div className="step-number">
-              {item.step}
-            </div>
-
-            <h3>{item.title}</h3>
-
-            <p>{item.desc}</p>
-          </div>
-        ))}
+    {index !== steps.length - 1 && (
+      <div className="mobile-arrow">↓</div>
+    )}
+  </React.Fragment>
+))}
       </div>
     </section>
 
-        {/* Counters */}
-        {/* <div className="row mt-5" data-aos="fade-up">
-          <Counter end={500} label="Students Trained" />
-          <Counter end={10} label="Courses Offered" />
-          <Counter end={120} label="Hiring Partners" />
-          <Counter end={98} label="Placement Success %" />
-        </div> */}
+       
       </div>
     </section>
   );
