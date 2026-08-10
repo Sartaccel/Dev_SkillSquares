@@ -165,7 +165,7 @@ export default function InvestorPartnerPage() {
           <p className="investor-page__cta-text">
             We'll walk you through the model, the numbers, and the roadmap.
           </p>
-          <a href="#" className="investor-page__cta-button">
+          <a href="/" className="investor-page__cta-button">
             Request the Deck
             <ArrowRight size={18} />
           </a>
