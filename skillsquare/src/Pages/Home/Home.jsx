@@ -5,7 +5,7 @@ import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import heroImage from "../../assets/images/hero.jpeg";
 import WhyChoose from "../WhyChoose/WhyChoose";
 import Success from "../Success/Success";
-import About from "../About/About";
+
 
 function Home() {
   return (
