@@ -62,7 +62,7 @@ const Footer = () => {
             <p>
               <FaPhoneAlt className="footer-icon" />
               <a href="tel:+919876543210" className="phone-link">
-                +91 98765 43210
+                +91 8190016662
               </a>
             </p>
             <p>
