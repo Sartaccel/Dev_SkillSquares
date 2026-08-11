@@ -3,7 +3,7 @@ import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = ({ setSvcShowForm }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -90,12 +90,9 @@ const Navbar = ({ setSvcShowForm }) => {
           <a href="/ACTAssessments" className="enroll-btn">ACT NOW</a>
         </div> */}
         <div className="nav-btn">
-    <button
-        className="enroll-btn"
-        onClick={() => setSvcShowForm(true)}
-    >
-        Enroll Now
-    </button>
+    <a href="/contact" className="enroll-btn">
+  Enroll Now
+</a>
 </div>
 
         {/* Toggle */}
