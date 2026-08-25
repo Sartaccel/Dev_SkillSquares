@@ -1,0 +1,72 @@
+[
+  {
+    "id": "01",
+    "title": "Workplace Readiness & Employability Skills",
+    "desc": "Develop workplace communication, teamwork, leadership and professional skills.",
+    "icon": "userTie",
+    "color": "#1565C0"
+  },
+  {
+    "id": "02",
+    "title": "Tourism & Travel Operations",
+    "desc": "Gain practical knowledge in tourism, travel management and customer service.",
+    "icon": "globe",
+    "color": "#512DA8"
+  },
+  {
+    "id": "03",
+    "title": "Hospitality & Guest Experience",
+    "desc": "Learn hospitality standards, guest handling and hotel operations.",
+    "icon": "conciergeBell",
+    "color": "#EF6C00"
+  },
+  {
+    "id": "04",
+    "title": "Home Care & Assisted Living",
+    "desc": "Professional caregiving, elderly support and assisted living practices.",
+    "icon": "handsHelping",
+    "color": "#C2185B"
+  },
+  {
+    "id": "05",
+    "title": "Digital Skills For Modern Jobs",
+    "desc": "Master digital tools, office applications and productivity software.",
+    "icon": "laptop",
+    "color": "#00897B"
+  },
+  {
+    "id": "06",
+    "title": "Sales & Marketing Strategies",
+    "desc": "Build skills in sales, branding and digital marketing techniques.",
+    "icon": "chartLine",
+    "color": "#E53935"
+  },
+  {
+    "id": "07",
+    "title": "Customer Support & CRM",
+    "desc": "Improve communication and CRM software handling skills.",
+    "icon": "headset",
+    "color": "#039BE5"
+  },
+  {
+    "id": "08",
+    "title": "Entrepreneurship & Startup",
+    "desc": "Turn innovative ideas into successful business opportunities.",
+    "icon": "rocket",
+    "color": "#8E24AA"
+  },
+  {
+    "id": "09",
+    "title": "Customer Branding",
+    "desc": "Learn branding strategies to improve customer engagement.",
+    "icon": "bullhorn",
+    "color": "#FB8C00"
+  },
+  {
+    "id": "10",
+    "title": "Personal Branding",
+    "desc": "Build your professional identity and career profile.",
+    "icon": "userGraduate",
+    "color": "#3949AB"
+  }
+]
