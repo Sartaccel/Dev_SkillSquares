@@ -56,6 +56,20 @@
     "desc": "Turn innovative ideas into successful business opportunities.",
     "icon": "rocket",
     "color": "#8E24AA"
+  },
+  {
+    "id": "09",
+    "title": "Customer Branding",
+    "desc": "Learn branding strategies to improve customer engagement.",
+    "icon": "bullhorn",
+    "color": "#FB8C00"
+  },
+  {
+    "id": "10",
+    "title": "Personal Branding",
+    "desc": "Build your professional identity and career profile.",
+    "icon": "userGraduate",
+    "color": "#3949AB"
   }
  
 ]
