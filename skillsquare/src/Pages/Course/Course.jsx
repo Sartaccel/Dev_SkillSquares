@@ -54,7 +54,7 @@ export default function Course() {
             <span
               key={i}
               style={{
-                left: `${randomX}%`,
+                left: `${randomX}%`, 
                 top: `${randomY}%`,
                 animationDelay: `-${randomDelay}s`,
                 animationDuration: `${randomDuration}s`,
@@ -81,7 +81,10 @@ export default function Course() {
             <div className="course-icon">
               {icons[course.icon]}
             </div>
-
+              <div>
+                {course.img}
+              </div>
+              
             <div className="course-content">
               <h2>{course.title}</h2>
               <p>{course.desc}</p>
