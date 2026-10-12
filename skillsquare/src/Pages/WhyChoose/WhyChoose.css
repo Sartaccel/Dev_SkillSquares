@@ -483,22 +483,15 @@
 
 /* MOBILE */
 
-@media (max-width: 768px) {
-
-  .journey-section {
-    padding: 70px 20px;
-  }
-
-  .journey-header h2 {
-    font-size: 32px;
-  }
+/* MOBILE */@media (max-width: 768px) {
 
   .journey-wrapper {
     min-width: auto;
     height: auto;
-
+    display: flex;
     flex-direction: column;
-    gap: 24px;
+    align-items: center;
+    gap: 0;
   }
 
   .journey-line {
@@ -515,4 +508,21 @@
     align-self: center;
     margin: 0;
   }
+}
+.mobile-arrow {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .mobile-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #1b9b8e;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
 }

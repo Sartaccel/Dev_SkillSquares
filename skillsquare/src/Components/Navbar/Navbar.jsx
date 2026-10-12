@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -54,9 +54,14 @@ const Navbar = () => {
             </a>
           </li>
 
-          <li>
+          {/* <li>
             <a href="/careers" onClick={handleNavigate}>
-              Careers
+              Our Course
+            </a>
+          </li> */}
+          <li>
+            <a href="/Course" onClick={handleNavigate}>
+              Our Course
             </a>
           </li>
 
@@ -68,23 +73,27 @@ const Navbar = () => {
 
           {/* Mobile Button */}
           <li className="mobile-btn">
-            <a
-              href="/contact"
-              className="enroll-btn"
-              onClick={handleNavigate}
-            >
-              Enroll Now
-            </a>
+            {/* <a href="/ACTAssessments" className="enroll-btn" onClick={handleNavigate}>Enroll Now</a> */}
+            <a href="/contact" className="enroll-btn" onClick={handleNavigate}>Enroll Now</a>
+            {/* <button
+        className="enroll-btn"
+        onClick={() => setSvcShowForm(true)}
+    >
+        Enroll Now
+    </button> */}
           </li>
 
         </ul>
 
         {/* Desktop Button */}
+        {/* <div className="nav-btn">
+          <a href="/ACTAssessments" className="enroll-btn">ACT NOW</a>
+        </div> */}
         <div className="nav-btn">
-          <a href="/enroll" className="enroll-btn">
-            Enroll Now
-          </a>
-        </div>
+    <a href="/contact" className="enroll-btn">
+  Enroll Now
+</a>
+</div>
 
         {/* Toggle */}
         <div
